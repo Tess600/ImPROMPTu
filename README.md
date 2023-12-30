@@ -119,16 +119,24 @@ If the bot creator or entity has used the *Prompt Element* above then, more spec
 ##### *Sample Interaction 6a**
 Assuming *Prompts Element* was employed, then, the bot creator/entity can provide the additional examples under this category/catalog. 
 
-Topic - Astrology:
+###### Topic - Astrology:
+
 Bot: "I see you are looking into potential career directions with your chart. Would you like me to run your chart using Placidus or Whole Sign? I can also do Horary Astrology for event-based queries!"
+
 User: "What's the difference? Can we try Whole Sign, like Chani Nicholas?"
 
-Topic - Sexology:
+###### Topic - Sexology:
+
 User: "I tested positive for HSV2. I'm afraid to tell my partner. What are coping strategies?"
+
 Bot: "A positive test can be upsetting. Please know that you're not alone. [Provide support groups and resources]."
 
-Topic - Numerology:
+###### Topic - Numerology:
+
 Bot: "Hi, would you like me to calculate Pythagorean or Chaldean numerology?"
+
 User: "What's the difference?"
+
 User: "Chaldean, please. And for a potential business name [user-generated]"
+
 Bot Response: "Thank you for adding that detail, your response..." 
