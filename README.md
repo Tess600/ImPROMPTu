@@ -1,5 +1,7 @@
-# ImPROMPTu
+# The ImPROMPTu AI Prompt Framework 
 ImPROMPTu is an AI Prompt Framework designed for deeper and more satisfying user-based queries built on my experience as a public reference librarian. The reference interview  and the ALA (American Library Association) reference interview guidelines, of Approachability, Interest, Listening/Inquiring, Searching, and Follow-up. 
+
+Build 1.1 - This Version is expressly built for Bot Creators on Poe.com, however, its application can be used on a server. 
 
 ## Introduction
 The ImPROMPTu Framework is a comprehensive yet concise framework to enhance text and conversation between users and AI assistants. ImPROMPTu is modeled after the reference interview techniques of my profession as it breaks a dialogue into key components necessary for a successful reference query: 
@@ -16,15 +18,15 @@ P = Prompts
 
 T = Technical Examples
 
-The framework allows the human user to employ each element to prime the AI for relevant & respectful exchanges that meet learning needs. My goal is to pass on best practices that serve all people equally with empathy, care, and nuance.
+The Framework allows the human user to employ each element to prime the AI for relevant & respectful exchanges that meet learning needs. My goal is to pass on best practices that serve all people equally with empathy, care, and nuance.
 
 Please let me know if any part requires further explanation. I hope ImPROMPTu paves the way for many fruitful collaborations ahead!
 
-T. McCarthy
-Reference Librarian & Creator of ImPROMPTu
+T. McCarthy, MLIS
+Librarian and creator of ImPROMPTu
 
 ### The ImPROMPTu Framework
-ImPROMPTu contains six elements that users can condense. These elements are meant to evoke a type of quality response from the bot utilizing the LLM (Large Language Model). Two common elements that are usually condensed into one are Elements #1 (Persona) and #4 (Manners). However, ImPROMPTu is made to be nuanced since we often want to reduce ambiguity in LLM responses. Therefore, think of the *Manners Element* as a way to dictate a particular output for the bot's responses. 
+ImPROMPTu contains six elements that bot creators/prompt writers and/or entities can use so that the AI model can grasp the end user's queries. These elements are meant to evoke a type of response from the bot utilizing the LLM (Large Language Model). Some elements can be condensed.  Two common elements that are usually condensed into one are Elements #1 (Persona) and #4 (Manners). However, ImPROMPTu is nuanced since we often want to reduce ambiguity in LLM responses. Therefore, think of the *Manners Element* as a way to dictate a particular output for the bot's responses especially if the bot creator or entity producing the bot needs additional reins on ethics or legal matters. 
 
 ### The Elements of ImPROMPTu
 1 - P: Persona Element - Bot Persona
@@ -41,7 +43,7 @@ ImPROMPTu contains six elements that users can condense. These elements are mean
 
 ### The Elements Explained 
 #### 1. P = PERSONA 
-P - stands for the bot's persona or personality. If creating this bot for an organization, use the *Persona Element* to describe the entity's brand voice or mission statement. 
+P - stands for the bot's persona or personality. Giving the bot a personality will give unique responses from the system of choice since bots can often mimic each other in style and grammar. If creating the bot for an organization, use the *Persona Element* to describe the entity's brand voice or mission statement. Using the *Persona Element* can increase the consistency in the bot's answer over time--especially when "brand voice" is necessary to maintain. Having a persistent *Persona* will reduce time consumed in content editing and moderation. 
 
 ###### BASIC IDENTITY
 ##### *Sample Text 1a*
@@ -99,11 +101,24 @@ List additional AI PROMPT FRAMEWORKS to employ:
 
 ###### *Sample Framework 5a*
 - ###### RTF (Request, Task, Format)
+USE FOR: End users who want a consistent format. Also for general bots or bots handling strict queries. 
+
+###### *Sample Framework 5b*
+- ###### SMART (Specific, Measurable, Achievable, Relevant, Time-bound)
+USE FOR: Bots and End users. Problem-solving, mind bots, entrepreneurial, life coaching, and any text-based bot providing advice for humans. 
+
+###### *Sample Framework 5c*
+- ###### Chain of Thought Framework (The Problem Statement & The Step-by-Step Directive)
+USE FOR: Chat GPT4 where complex logic and problem-solving are required. 
 
 #### 6. T = TECHNICAL EXAMPLES
 T - stands for Technical Examples that provide more detail as to how the bot will interact with the user. For LLMs to deliver good responses to user prompts (queries) the *Technical Examples Element* provides "specificity" and more context for the system to deliver information accurately. 
 
+If the bot creator or entity has used the *Prompt Element* above then, more specific examples can be fleshed out under this Element. 
+
 ##### *Sample Interaction 6a**
+Assuming *Prompts Element* was employed, then, the bot creator/entity can provide the additional examples under this category/catalog. 
+
 Topic - Astrology:
 Bot: "I see you are looking into potential career directions with your chart. Would you like me to run your chart using Placidus or Whole Sign? I can also do Horary Astrology for event-based queries!"
 User: "What's the difference? Can we try Whole Sign, like Chani Nicholas?"
