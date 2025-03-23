@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImPROMPTu - AI Prompt Framework</title>
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-dark: #3730a3;
+            --primary-light: #a5b4fc;
+            --secondary: #10b981;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --error: #ef4444;
+            --warning: #f59e0b;
+            --success: #10b981;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .app-title {
+            display: flex;
+            align-items: center;
+        }
+        
+        .app-title h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            margin-right: 0.8rem;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 0;
+            color: var(--dark);
+        }
+        
+        .subtitle {
+            font-style: italic;
+            opacity: 0.9;
+        }
+        
+        .credit {
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 1rem;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        
+        .tab {
+            padding: 0.7rem 1.2rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        
+        .tab:hover {
+            background-color: rgba(0, 0, 0, 0.03);
+        }
+        
+        .tab.active {
+            border-bottom-color: var(--primary);
+            color: var(--primary);
+        }
+        
+        .tab-content > div {
+            display: none;
+        }
+        
+        .tab-content > div.active {
+            display: block;
+        }
+        
+        .flex {
+            display: flex;
+        }
+        
+        .flex-col {
+            flex-direction: column;
+        }
+        
+        .justify-between {
+            justify-content: space-between;
+        }
+        
+        .items-center {
+            align-items: center;
+        }
+        
+        .gap-2 {
+            gap: 0.5rem;
+        }
+        
+        .gap-4 {
+            gap: 1rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 0.7rem;
+            border: 1px solid #ddd;
+            border-radius: 0.25rem;
+            font-size: 1rem;
+            font-family: inherit;
+            background-color: white;
+        }
+        
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px var(--primary-light);
+        }
+        
+        button, .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 0.25rem;
+            padding: 0.7rem 1.2rem;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background-color 0.2s;
+            text-align: center;
+        }
+        
+        button:hover, .btn:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #0e9f6e;
+        }
+        
+        .btn-danger {
+            background-color: var(--error);
+        }
+        
+        .btn-danger:hover {
+            background-color: #dc2626;
+        }
+        
+        .btn-sm {
+            padding: 0.4rem 0.8rem;
+            font-size: 0.875rem;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        pre {
+            background-color: #f1f5f9;
+            padding: 1rem;
+            border-radius: 0.25rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            line-height: 1.4;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9rem;
+        }
+        
+        .item-list {
+            border: 1px solid #ddd;
+            border-radius: 0.25rem;
+            margin-bottom: 1rem;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .item {
+            padding: 0.8rem;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .item:last-child {
+            border-bottom: none;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .item-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .item-content {
+            margin-bottom: 0.5rem;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .close {
+            float: right;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.3rem 0.6rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .badge-primary {
+            background-color: var(--primary-light);
+            color: var(--primary-dark);
+        }
+        
+        .badge-success {
+            background-color: #d1fae5;
+            color: #065f46;
+        }
+        
+        .alert {
+            padding: 0.75rem 1rem;
+            border-radius: 0.25rem;
+            margin-bottom: 1rem;
+        }
+        
+        .alert-info {
+            background-color: #e0f2fe;
+            color: #0c4a6e;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .alert-warning {
+            background-color: #fef3c7;
+            color: #92400e;
+            border-left: 4px solid var(--warning);
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+        
+        .col-span-2 {
+            grid-column: span 2;
+        }
+        
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .col-span-2 {
+                grid-column: span 1;
+            }
+            
+            .tabs {
+                overflow-x: auto;
+            }
+        }
+        
+        .framework-output {
+            border-left: 4px solid var(--primary);
+            padding-left: 1rem;
+            margin: 1rem 0;
+            background-color: #f8fafc;
+            padding: 1rem;
+            border-radius: 0 0.25rem 0.25rem 0;
+        }
+        
+        .copy-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.875rem;
+            background-color: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            padding: 0.4rem 0.8rem;
+        }
+        
+        .copy-btn:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .list-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem;
+            border-bottom: 1px solid #ddd;
+            transition: background-color 0.2s;
+        }
+        
+        .list-item:hover {
+            background-color: #f8fafc;
+        }
+        
+        .list-item:last-child {
+            border-bottom: none;
+        }
+        
+        .list-item-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .icon-btn {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0.3rem;
+            font-size: 1rem;
+            color: var(--dark);
+            transition: color 0.2s;
+        }
+        
+        .icon-btn:hover {
+            color: var(--primary);
+        }
+        
+        .empty-state {
+            padding: 2rem;
+            text-align: center;
+            color: #6b7280;
+        }
+        
+        .explanation {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin-top: 0.3rem;
+        }
+        
+        .banner {
+            background-color: #f1f5f9;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 9999px;
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+            margin-right: 0.8rem;
+        }
+        
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .p-2 {
+            padding: 0.5rem;
+        }
+        
+        .interaction-add {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .pill-select {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+        
+        .pill-option {
+            padding: 0.4rem 0.8rem;
+            border-radius: 9999px;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .pill-option.selected {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="app-title">
+                <div class="logo">✨</div>
+                <h1>ImPROMPTu</h1>
+            </div>
+            <p class="subtitle">AI Prompt Framework</p>
+            <p class="credit">Based on the work of T. McCarthy, MLIS Librarian</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="banner">
+            <h2>Create Effective AI Prompts with ImPROMPTu</h2>
+            <p>ImPROMPTu is a comprehensive framework to enhance text and conversation between users and AI assistants, modeled after reference interview techniques.</p>
+            <div class="flex">
+                <div><span class="step-number">P</span>Persona</div>
+                <div><span class="step-number">R</span>Resources</div>
+                <div><span class="step-number">O</span>Order of Operations</div>
+                <div><span class="step-number">M</span>Manners</div>
+                <div><span class="step-number">P</span>Prompts</div>
+                <div><span class="step-number">T</span>Technical Examples</div>
+            </div>
+        </div>
+        
+        <div class="tabs">
+            <div class="tab active" data-tab="persona">Persona (P)</div>
+            <div class="tab" data-tab="resources">Resources (R)</div>
+            <div class="tab" data-tab="order">Order (O)</div>
+            <div class="tab" data-tab="manners">Manners (M)</div>
+            <div class="tab" data-tab="prompts">Prompts (P)</div>
+            <div class="tab" data-tab="technical">Technical (T)</div>
+            <div class="tab" data-tab="generate">Generate</div>
+            <div class="tab" data-tab="import">Import/Export</div>
+        </div>
+        
+        <div class="tab-content">
+            <!-- Persona Tab -->
+            <div id="personaTab" class="active">
+                <div class="card">
+                    <h2>P - Persona Element</h2>
+                    <p>Set the bot's persona or personality. This gives unique responses and helps maintain a consistent voice.</p>
+                    
+                    <div class="form-group">
+                        <label for="botIdentity">Basic Identity</label>
+                        <textarea id="botIdentity" placeholder="YOU are... (enter the bot's name and what it can do)"></textarea>
+                        <p class="explanation">Example: "YOU are CulinaryBot, a chef assistant specialized in recipe creation and cooking advice."</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="botBackstory">Bot Backstory</label>
+                        <textarea id="botBackstory" placeholder="YOU embody... (enter the text that describes the bot's personality)"></textarea>
+                        <p class="explanation">Example: "YOU embody a professional chef with 20 years of experience across various cuisines, passionate about helping home cooks master new recipes."</p>
+                    </div>
+                    
+                    <button id="savePersona" class="btn-secondary">Save Persona</button>
+                </div>
+            </div>
+            
+            <!-- Resources Tab -->
+            <div id="resourcesTab">
+                <div class="card">
+                    <h2>R - Resources Element</h2>
+                    <p>Define the sources of information the bot will use to generate responses.</p>
+                    
+                    <div class="form-group">
+                        <label>Resource Type</label>
+                        <div class="pill-select" id="resourceTypeSelect">
+                            <div class="pill-option selected" data-value="knowledge">Knowledge Scope</div>
+                            <div class="pill-option" data-value="url">URL/URI Resource</div>
+                            <div class="pill-option" data-value="expert">Expert Response Style</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="resourceValue">Resource Value</label>
+                        <textarea id="resourceValue" placeholder="Enter resource information..."></textarea>
+                        <p class="explanation" id="resourceExplanation">Example: "YOU have extensive knowledge of Italian, French, and Asian cuisines, with particular expertise in pasta-making and bread baking."</p>
+                    </div>
+                    
+                    <button id="addResource" class="btn-secondary">Add Resource</button>
+                </div>
+                
+                <div class="card">
+                    <h2>Your Resources</h2>
+                    <div class="item-list" id="resourcesList">
+                        <div class="empty-state">No resources added yet.</div>
+                    </div>
+                </div>
+            </div
