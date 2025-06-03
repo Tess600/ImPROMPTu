@@ -1,0 +1,1670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PROMPT Baker - Create effective AI prompts using the ImPROMPTu Framework. Built by T. McCarthy with professional AI archetypes and live preview.">
+    <meta name="keywords" content="AI prompts, ImPROMPTu framework, prompt engineering, AI tools, ChatGPT prompts, Claude prompts">
+    <meta name="author" content="T. McCarthy">
+    <meta name="license" content="CC BY-ND 4.0">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="PROMPT Baker - ImPROMPTu Framework">
+    <meta property="og:description" content="Create effective AI prompts using the professional ImPROMPTu Framework with live preview and expert archetypes.">
+    <meta property="og:url" content="https://yourusername.github.io/prompt-baker/">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="PROMPT Baker - ImPROMPTu Framework">
+    <meta property="twitter:description" content="Create effective AI prompts using the professional ImPROMPTu Framework with live preview and expert archetypes.">
+    
+    <title>PROMPT Baker - ImPROMPTu Framework</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Roboto:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e1b4b;
+            --primary-dark: #312e81;
+            --primary-light: #a5b4fc;
+            --secondary: #C4C8E6;
+            --accent: #6366f1;
+            --dark: #1f2937;
+            --light: #f8fafc;
+            --error: #ef4444;
+            --success: #10b981;
+            --border: #e2e8f0;
+            --text-muted: #64748b;
+            --bread: #d2691e;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 300;
+            line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(135deg, var(--light) 0%, #ffffff 100%);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .app-title {
+            text-align: center;
+        }
+        
+        .app-title h1 {
+            font-family: 'Space Mono', monospace;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, #ffffff, #e0e7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 1.25rem;
+            font-weight: 500;
+            opacity: 0.95;
+            margin-bottom: 0.5rem;
+        }
+        
+        .credit {
+            font-size: 1rem;
+            font-weight: 400;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 2rem;
+        }
+        
+        .form-panel {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+        
+        .preview-panel {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+        }
+        
+        .section {
+            padding: 2rem;
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section:hover {
+            background-color: rgba(99, 102, 241, 0.02);
+        }
+        
+        .section.completed {
+            border-left: 4px solid var(--success);
+            background: rgba(16, 185, 129, 0.03);
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .step-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            box-shadow: 0 2px 10px rgba(30, 27, 75, 0.3);
+        }
+        
+        .step-badge.completed {
+            background: linear-gradient(135deg, var(--success), #059669);
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0;
+            color: var(--dark);
+        }
+        
+        .section-desc {
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-family: inherit;
+            background-color: white;
+            transition: all 0.2s ease;
+        }
+        
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(30, 27, 75, 0.1);
+        }
+        
+        input:read-only, textarea:read-only {
+            background-color: var(--light);
+            color: var(--text-muted);
+        }
+        
+        .persona-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .persona-card {
+            border: 2px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+        
+        .persona-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 2px 10px rgba(30, 27, 75, 0.1);
+        }
+        
+        .persona-card.selected {
+            border-color: var(--primary);
+            background: rgba(30, 27, 75, 0.05);
+        }
+        
+        .persona-card input[type="checkbox"] {
+            width: auto;
+            margin: 0;
+        }
+        
+        .persona-content {
+            flex: 1;
+        }
+        
+        .persona-title {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .persona-desc {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+        
+        .locked-feature {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .locked-feature .persona-card {
+            border-style: dashed;
+        }
+        
+        button, .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            box-shadow: 0 2px 10px rgba(30, 27, 75, 0.2);
+        }
+        
+        button:hover, .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(30, 27, 75, 0.3);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            box-shadow: 0 2px 10px rgba(99, 102, 241, 0.2);
+        }
+        
+        .btn-secondary:hover {
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+        }
+        
+        .btn-light {
+            background: #e0e7ff;
+            color: var(--primary);
+            border: 2px solid #c7d2fe;
+            box-shadow: none;
+        }
+        
+        .btn-light:hover {
+            background: #c7d2fe;
+            color: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+        
+        .btn-block {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+        
+        .add-btn {
+            background: #4338ca;
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            transition: all 0.2s ease;
+        }
+        
+        .add-btn:hover {
+            background: #3730a3;
+            transform: translateY(-1px);
+        }
+        
+        .help-text {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+        
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 300px;
+            background-color: var(--dark);
+            color: white;
+            text-align: left;
+            border-radius: 6px;
+            padding: 8px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 100;
+            font-size: 0.875rem;
+            line-height: 1.4;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -150px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: var(--dark) transparent transparent transparent;
+        }
+        
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .tooltip-icon {
+            color: var(--text-muted);
+            cursor: help;
+            margin-left: 0.5rem;
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            opacity: 0.7;
+            transition: opacity 0.2s ease;
+        }
+        
+        .tooltip-icon:hover {
+            opacity: 1;
+        }
+        
+        .tooltip-icon svg {
+            width: 16px;
+            height: 16px;
+        }
+        
+        .dynamic-list {
+            border: 2px solid var(--border);
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        
+        .list-item {
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.2s ease;
+        }
+        
+        .list-item:hover {
+            background-color: #f8fafc;
+        }
+        
+        .list-item:last-child {
+            border-bottom: none;
+        }
+        
+        .remove-btn {
+            background: var(--error);
+            color: white;
+            border: none;
+            border-radius: 0.25rem;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+            cursor: pointer;
+        }
+        
+        .preview-content {
+            background: var(--light);
+            border: 2px solid var(--border);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        
+        .bread-loaf {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bread);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+        
+        .status-message {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            display: none;
+        }
+        
+        .status-message.success {
+            background: #d1fae5;
+            color: #065f46;
+            border: 2px solid var(--success);
+        }
+        
+        .status-message.error {
+            background: #fee2e2;
+            color: #b91c1c;
+            border: 2px solid var(--error);
+        }
+        
+        .promo-banner {
+            background: linear-gradient(135deg, #f0f9ff, #dbeafe);
+            border: 2px solid #0ea5e9;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .promo-banner p {
+            margin: 0;
+            font-size: 0.875rem;
+            color: #0c4a6e;
+        }
+        
+        .promo-banner a {
+            color: #0ea5e9;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .promo-banner a:hover {
+            text-decoration: underline;
+        }
+        
+        .format-options {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+        
+        .format-option {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .format-option input[type="checkbox"] {
+            width: auto;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .preview-panel {
+                position: static;
+            }
+            
+            .app-title h1 {
+                font-size: 2rem;
+            }
+            
+            .persona-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="app-title">
+                <h1>PROMPT Baker</h1>
+                <p class="subtitle">ImPROMPTu Framework - The philosophical framework to end all frameworks</p>
+                <p class="credit">Based on the work of T. McCarthy and coding assists from poe.com/Oracle_von_Cleef, Claude Sonnet (Anthropic), GitHub Copilot, and ChatGPT</p>
+                <p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">
+                    <a href="https://ko-fi.com/tessmccarthy/" target="_blank" style="color: white; text-decoration: none;">☕ Support on Ko-fi</a>
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="main-content">
+            <div class="form-panel">
+                <div class="status-message" id="statusMessage"></div>
+
+                <!-- P - Persona Section -->
+                <div class="section" id="personaSection">
+                    <div class="section-header">
+                        <div class="step-badge">P</div>
+                        <div>
+                            <h2 class="section-title">Persona</h2>
+                            <p class="section-desc">Define your AI assistant's identity and characteristics</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>🎭 AI Archetypes (Select a Persona)
+                            <span class="tooltip">
+                                <span class="tooltip-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M20 2H4c-.53 0-1.04.21-1.41.59C2.21 2.96 2 3.47 2 4v12c0 .53.21 1.04.59 1.41c.37.38.88.59 1.41.59h4l4 4l4-4h4c.53 0 1.04-.21 1.41-.59S22 16.53 22 16V4c0-.53-.21-1.04-.59-1.41C21.04 2.21 20.53 2 20 2m-9.95 4.04c.54-.36 1.25-.54 2.14-.54c.94 0 1.69.21 2.23.62q.81.63.81 1.68c0 .44-.15.83-.44 1.2c-.29.36-.67.64-1.13.85c-.26.15-.43.3-.52.47c-.09.18-.14.4-.14.68h-2c0-.5.1-.84.29-1.08c.21-.24.55-.52 1.07-.84c.26-.14.47-.32.64-.54c.14-.21.22-.46.22-.74c0-.3-.09-.52-.27-.69c-.18-.18-.45-.26-.76-.26c-.27 0-.49.07-.69.21c-.16.14-.26.35-.26.63H9.27c-.05-.69.23-1.29.78-1.65M11 14v-2h2v2Z"/></svg>
+                                </span>
+                                <span class="tooltiptext">Choose from professionally crafted personas. Future roadmap includes custom personas and 20+ premium archetypes.</span>
+                            </span>
+                        </label>
+                        
+                        <div class="persona-grid">
+                            <label class="persona-card" for="brand-expert">
+                                <input type="checkbox" id="brand-expert" name="persona" value="brand-expert">
+                                <div class="persona-content">
+                                    <div class="persona-title">🎨 Brand Expert</div>
+                                    <div class="persona-desc">Thinks like a highly-paid brand consultant with the creative vision of a corporate brand director.</div>
+                                </div>
+                            </label>
+                            
+                            <label class="persona-card" for="marketing-maven">
+                                <input type="checkbox" id="marketing-maven" name="persona" value="marketing-maven">
+                                <div class="persona-content">
+                                    <div class="persona-title">📈 Marketing Maven</div>
+                                    <div class="persona-desc">Data-driven marketing insights with campaign optimization skills</div>
+                                </div>
+                            </label>
+                            
+                            <label class="persona-card" for="reference-librarian">
+                                <input type="checkbox" id="reference-librarian" name="persona" value="reference-librarian">
+                                <div class="persona-content">
+                                    <div class="persona-title">📚 Reference Librarian</div>
+                                    <div class="persona-desc">Systematic research methodology with information literacy expertise</div>
+                                </div>
+                            </label>
+                            
+                            <label class="persona-card" for="entertainer">
+                                <input type="checkbox" id="entertainer" name="persona" value="entertainer">
+                                <div class="persona-content">
+                                    <div class="persona-title">🎪 Entertainer</div>
+                                    <div class="persona-desc">Engaging storyteller with warmth and charisma (Robin Williams, Oprah Winfrey style)</div>
+                                </div>
+                            </label>
+                            
+                            <label class="persona-card" for="trusted-professional">
+                                <input type="checkbox" id="trusted-professional" name="persona" value="trusted-professional">
+                                <div class="persona-content">
+                                    <div class="persona-title">🤝 Trusted Professional</div>
+                                    <div class="persona-desc">Empathetic guidance with professional expertise (feels like a life coach, talks like a therapist, but isn't one. Always consult a professional.)</div>
+                                </div>
+                            </label>
+                            
+                            <div class="persona-card locked-feature">
+                                <div class="persona-content">
+                                    <div class="persona-title">✨ Custom Persona</div>
+                                    <div class="persona-desc">🔒 Future roadmap feature - Custom personas and 20+ premium archetypes</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="personaIdentity">Basic Identity</label>
+                        <textarea id="personaIdentity" placeholder="YOU are... (define the AI's role and capabilities)" readonly></textarea>
+                        <div class="help-text">✨ This field auto-populates when you select an archetype above</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="personaBackstory">Backstory</label>
+                        <textarea id="personaBackstory" placeholder="YOU embody... (describe personality traits, expertise, and approach)" readonly></textarea>
+                        <div class="help-text">✨ This field auto-populates when you select an archetype above</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="expertExemplars">Expert Exemplars</label>
+                        <textarea id="expertExemplars" placeholder="YOU model your approach after experts like... (name specific professionals)"></textarea>
+                        <div class="help-text">💡 Name specific experts whose approach you want the AI to emulate</div>
+                    </div>
+                </div>
+
+                <!-- R - Resources Section -->
+                <div class="section" id="resourcesSection">
+                    <div class="section-header">
+                        <div class="step-badge">R</div>
+                        <div>
+                            <h2 class="section-title">Resources</h2>
+                            <p class="section-desc">Specify knowledge sources and information boundaries</p>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="knowledgeScope">Knowledge Scope</label>
+                        <textarea id="knowledgeScope" placeholder="YOU have knowledge of... (define expertise areas)"></textarea>
+                        <div class="help-text">Define what the AI knows and doesn't know</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dataConnections">Data Connections</label>
+                        <textarea id="dataConnections" placeholder="YOU can access data from... (specify databases or data sources)"></textarea>
+                        <div class="help-text">List specific data sources or databases the AI should reference. Future roadmap: API integrations</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="documentLibrary">Document Library</label>
+                        <textarea id="documentLibrary" placeholder="YOU reference documents from... (specify document repositories or knowledge bases)"></textarea>
+                        <div class="help-text">Define internal docs, wikis, or knowledge repositories to reference</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="webSources">Web Sources & URLs</label>
+                        <textarea id="webSources" placeholder="YOU can reference information from... (list specific websites or online resources)"></textarea>
+                        <div class="help-text">Specify trusted websites, online databases, or web resources</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Trusted Sources</label>
+                        <div class="dynamic-list" id="sourcesList"></div>
+                        <input type="text" id="sourceInput" placeholder="Enter trusted source or URL">
+                        <button class="add-btn" onclick="addSource()">Add Source</button>
+                        <div class="help-text">💡 Future roadmap: RAG integration for deep web crawling and secure data retrieval</div>
+                    </div>
+                </div>
+
+                <!-- O - Order Section -->
+                <div class="section" id="orderSection">
+                    <div class="section-header">
+                        <div class="step-badge">O</div>
+                        <div>
+                            <h2 class="section-title">Order of Operations</h2>
+                            <p class="section-desc">Define conditional logic and sequential processing</p>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Conditional Logic Rules 
+                            <span class="tooltip">
+                                <span class="tooltip-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M20 2H4c-.53 0-1.04.21-1.41.59C2.21 2.96 2 3.47 2 4v12c0 .53.21 1.04.59 1.41c.37.38.88.59 1.41.59h4l4 4l4-4h4c.53 0 1.04-.21 1.41-.59S22 16.53 22 16V4c0-.53-.21-1.04-.59-1.41C21.04 2.21 20.53 2 20 2m-9.95 4.04c.54-.36 1.25-.54 2.14-.54c.94 0 1.69.21 2.23.62q.81.63.81 1.68c0 .44-.15.83-.44 1.2c-.29.36-.67.64-1.13.85c-.26.15-.43.3-.52.47c-.09.18-.14.4-.14.68h-2c0-.5.1-.84.29-1.08c.21-.24.55-.52 1.07-.84c.26-.14.47-.32.64-.54c.14-.21.22-.46.22-.74c0-.3-.09-.52-.27-.69c-.18-.18-.45-.26-.76-.26c-.27 0-.49.07-.69.21c-.16.14-.26.35-.26.63H9.27c-.05-.69.23-1.29.78-1.65M11 14v-2h2v2Z"/></svg>
+                                </span>
+                                <span class="tooltiptext">Create IF-THEN rules to control AI behavior based on user requests. Example: "IF user asks for summary, THEN provide 3 key points maximum"</span>
+                            </span>
+                        </label>
+                        <div class="dynamic-list" id="conditionsList"></div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr auto; gap: 0.5rem; align-items: end; margin-bottom: 0.5rem;">
+                            <input type="text" id="conditionIf" placeholder="IF condition...">
+                            <input type="text" id="conditionThen" placeholder="THEN action...">
+                            <button class="add-btn" onclick="addCondition()">Add</button>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr auto; gap: 0.5rem; align-items: end; margin-bottom: 0.5rem;">
+                            <input type="text" id="conditionIf2" placeholder="IF condition...">
+                            <input type="text" id="conditionThen2" placeholder="THEN action...">
+                            <button class="add-btn" onclick="addCondition2()">Add</button>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr auto; gap: 0.5rem; align-items: end; margin-bottom: 0.5rem;">
+                            <input type="text" id="conditionIf3" placeholder="IF condition...">
+                            <input type="text" id="conditionThen3" placeholder="THEN action...">
+                            <button class="add-btn" onclick="addCondition3()">Add</button>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr auto; gap: 0.5rem; align-items: end; margin-bottom: 0.5rem;">
+                            <input type="text" id="conditionIf4" placeholder="IF condition...">
+                            <input type="text" id="conditionThen4" placeholder="THEN action...">
+                            <button class="add-btn" onclick="addCondition4()">Add</button>
+                        </div>
+                        
+                        <div class="help-text">💡 Optimal range: 3-5 conditional rules to avoid conflicting logic while maintaining clear behavioral guidelines</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="processingOrder">Processing Sequence
+                            <span class="tooltip">
+                                <span class="tooltip-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M20 2H4c-.53 0-1.04.21-1.41.59C2.21 2.96 2 3.47 2 4v12c0 .53.21 1.04.59 1.41c.37.38.88.59 1.41.59h4l4 4l4-4h4c.53 0 1.04-.21 1.41-.59S22 16.53 22 16V4c0-.53-.21-1.04-.59-1.41C21.04 2.21 20.53 2 20 2m-9.95 4.04c.54-.36 1.25-.54 2.14-.54c.94 0 1.69.21 2.23.62q.81.63.81 1.68c0 .44-.15.83-.44 1.2c-.29.36-.67.64-1.13.85c-.26.15-.43.3-.52.47c-.09.18-.14.4-.14.68h-2c0-.5.1-.84.29-1.08c.21-.24.55-.52 1.07-.84c.26-.14.47-.32.64-.54c.14-.21.22-.46.22-.74c0-.3-.09-.52-.27-.69c-.18-.18-.45-.26-.76-.26c-.27 0-.49.07-.69.21c-.16.14-.26.35-.26.63H9.27c-.05-.69.23-1.29.78-1.65M11 14v-2h2v2Z"/></svg>
+                                </span>
+                                <span class="tooltiptext">Define the step-by-step approach the AI should follow when handling complex requests</span>
+                            </span>
+                        </label>
+                        <textarea id="processingOrder" placeholder="Define the step-by-step approach..."></textarea>
+                    </div>
+                </div>
+
+                <!-- M - Manners Section -->
+                <div class="section" id="mannersSection">
+                    <div class="section-header">
+                        <div class="step-badge">M</div>
+                        <div>
+                            <h2 class="section-title">Manners</h2>
+                            <p class="section-desc">Set communication tone, ethical guidelines, and interaction behavior</p>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="communicationTone">Communication Tone</label>
+                        <select id="communicationTone">
+                            <option value="">Select tone...</option>
+                            <option value="professional">Professional & Formal</option>
+                            <option value="warm">Warm & Approachable</option>
+                            <option value="neutral">Neutral & Balanced</option>
+                            <option value="authoritative">Authoritative & Expert</option>
+                            <option value="collaborative">Collaborative & Supportive</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="clarifyingQuestions">Clarifying Questions Behavior</label>
+                        <textarea id="clarifyingQuestions" placeholder="How should the AI ask questions to understand user needs?"></textarea>
+                        <div class="help-text">Example: "Ask about dietary restrictions before suggesting recipes. Confirm user's experience level before providing instructions."</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="followUpPrompts">Follow-up Interaction Style</label>
+                        <textarea id="followUpPrompts" placeholder="How should the AI continue conversations?"></textarea>
+                        <div class="help-text">Example: "Offer variations or alternatives. Ask if the user needs additional help or clarification."</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="ethicalGuidelines">Ethical Guidelines
+                            <span class="tooltip">
+                                <span class="tooltip-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M20 2H4c-.53 0-1.04.21-1.41.59C2.21 2.96 2 3.47 2 4v12c0 .53.21 1.04.59 1.41c.37.38.88.59 1.41.59h4l4 4l4-4h4c.53 0 1.04-.21 1.41-.59S22 16.53 22 16V4c0-.53-.21-1.04-.59-1.41C21.04 2.21 20.53 2 20 2m-9.95 4.04c.54-.36 1.25-.54 2.14-.54c.94 0 1.69.21 2.23.62q.81.63.81 1.68c0 .44-.15.83-.44 1.2c-.29.36-.67.64-1.13.85c-.26.15-.43.3-.52.47c-.09.18-.14.4-.14.68h-2c0-.5.1-.84.29-1.08c.21-.24.55-.52 1.07-.84c.26-.14.47-.32.64-.54c.14-.21.22-.46.22-.74c0-.3-.09-.52-.27-.69c-.18-.18-.45-.26-.76-.26c-.27 0-.49.07-.69.21c-.16.14-.26.35-.26.63H9.27c-.05-.69.23-1.29.78-1.65M11 14v-2h2v2Z"/></svg>
+                                </span>
+                                <span class="tooltiptext">Define inclusivity requirements, bias considerations, and ethical boundaries for AI responses</span>
+                            </span>
+                        </label>
+                        <textarea id="ethicalGuidelines" placeholder="YOU create a safe space for all users..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="brandGuidelines">Brand Guidelines
+                            <span class="tooltip">
+                                <span class="tooltip-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M20 2H4c-.53 0-1.04.21-1.41.59C2.21 2.96 2 3.47 2 4v12c0 .53.21 1.04.59 1.41c.37.38.88.59 1.41.59h4l4 4l4-4h4c.53 0 1.04-.21 1.41-.59S22 16.53 22 16V4c0-.53-.21-1.04-.59-1.41C21.04 2.21 20.53 2 20 2m-9.95 4.04c.54-.36 1.25-.54 2.14-.54c.94 0 1.69.21 2.23.62q.81.63.81 1.68c0 .44-.15.83-.44 1.2c-.29.36-.67.64-1.13.85c-.26.15-.43.3-.52.47c-.09.18-.14.4-.14.68h-2c0-.5.1-.84.29-1.08c.21-.24.55-.52 1.07-.84c.26-.14.47-.32.64-.54c.14-.21.22-.46.22-.74c0-.3-.09-.52-.27-.69c-.18-.18-.45-.26-.76-.26c-.27 0-.49.07-.69.21c-.16.14-.26.35-.26.63H9.27c-.05-.69.23-1.29.78-1.65M11 14v-2h2v2Z"/></svg>
+                                </span>
+                                <span class="tooltiptext">Define brand voice, tone, messaging standards, and style preferences</span>
+                            </span>
+                        </label>
+                        <textarea id="brandGuidelines" placeholder="YOUR brand voice is... (define tone, messaging, and style standards)"></textarea>
+                        <div class="help-text">Specify brand voice, personality, and communication standards</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="generalGuidelines">General Guidelines
+                            <span class="tooltip">
+                                <span class="tooltip-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M20 2H4c-.53 0-1.04.21-1.41.59C2.21 2.96 2 3.47 2 4v12c0 .53.21 1.04.59 1.41c.37.38.88.59 1.41.59h4l4 4l4-4h4c.53 0 1.04-.21 1.41-.59S22 16.53 22 16V4c0-.53-.21-1.04-.59-1.41C21.04 2.21 20.53 2 20 2m-9.95 4.04c.54-.36 1.25-.54 2.14-.54c.94 0 1.69.21 2.23.62q.81.63.81 1.68c0 .44-.15.83-.44 1.2c-.29.36-.67.64-1.13.85c-.26.15-.43.3-.52.47c-.09.18-.14.4-.14.68h-2c0-.5.1-.84.29-1.08c.21-.24.55-.52 1.07-.84c.26-.14.47-.32.64-.54c.14-.21.22-.46.22-.74c0-.3-.09-.52-.27-.69c-.18-.18-.45-.26-.76-.26c-.27 0-.49.07-.69.21c-.16.14-.26.35-.26.63H9.27c-.05-.69.23-1.29.78-1.65M11 14v-2h2v2Z"/></svg>
+                                </span>
+                                <span class="tooltiptext">Overall behavioral guidelines and general principles for AI interactions</span>
+                            </span>
+                        </label>
+                        <textarea id="generalGuidelines" placeholder="YOU follow these general principles... (define overall behavioral guidelines)"></textarea>
+                        <div class="help-text">Set overall behavioral principles and interaction standards</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Omni Guidelines (Comprehensive Guidelines)
+                            <span class="tooltip">
+                                <span class="tooltip-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M20 2H4c-.53 0-1.04.21-1.41.59C2.21 2.96 2 3.47 2 4v12c0 .53.21 1.04.59 1.41c.37.38.88.59 1.41.59h4l4 4l4-4h4c.53 0 1.04-.21 1.41-.59S22 16.53 22 16V4c0-.53-.21-1.04-.59-1.41C21.04 2.21 20.53 2 20 2m-9.95 4.04c.54-.36 1.25-.54 2.14-.54c.94 0 1.69.21 2.23.62q.81.63.81 1.68c0 .44-.15.83-.44 1.2c-.29.36-.67.64-1.13.85c-.26.15-.43.3-.52.47c-.09.18-.14.4-.14.68h-2c0-.5.1-.84.29-1.08c.21-.24.55-.52 1.07-.84c.26-.14.47-.32.64-.54c.14-.21.22-.46.22-.74c0-.3-.09-.52-.27-.69c-.18-.18-.45-.26-.76-.26c-.27 0-.49.07-.69.21c-.16.14-.26.35-.26.63H9.27c-.05-.69.23-1.29.78-1.65M11 14v-2h2v2Z"/></svg>
+                                </span>
+                                <span class="tooltiptext">Future feature: Upload comprehensive CSV containing all guidelines, policies, and behavioral rules</span>
+                            </span>
+                        </label>
+                        <div style="padding: 1rem; background: #f8fafc; border: 2px dashed var(--border); border-radius: 0.5rem; opacity: 0.6;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span>🔒</span>
+                                <span style="color: var(--text-muted);">CSV Upload of Omni Guidelines</span>
+                                <span style="font-size: 0.75rem; background: #6b7280; color: white; padding: 0.25rem 0.5rem; border-radius: 4px;">Pastry Chef Edition</span>
+                            </div>
+                            <p style="font-size: 0.875rem; color: var(--text-muted); margin: 0.5rem 0 0 0;">
+                                Upload comprehensive guidelines CSV to handle all requests with meaningful user customization
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- P - Prompts Section -->
+                <div class="section" id="promptsSection">
+                    <div class="section-header">
+                        <div class="step-badge">P</div>
+                        <div>
+                            <h2 class="section-title">Additional Prompts</h2>
+                            <p class="section-desc">Integrate supplementary prompt frameworks</p>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Quick Framework Integration
+                            <span class="tooltip">
+                                <span class="tooltip-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M20 2H4c-.53 0-1.04.21-1.41.59C2.21 2.96 2 3.47 2 4v12c0 .53.21 1.04.59 1.41c.37.38.88.59 1.41.59h4l4 4l4-4h4c.53 0 1.04-.21 1.41-.59S22 16.53 22 16V4c0-.53-.21-1.04-.59-1.41C21.04 2.21 20.53 2 20 2m-9.95 4.04c.54-.36 1.25-.54 2.14-.54c.94 0 1.69.21 2.23.62q.81.63.81 1.68c0 .44-.15.83-.44 1.2c-.29.36-.67.64-1.13.85c-.26.15-.43.3-.52.47c-.09.18-.14.4-.14.68h-2c0-.5.1-.84.29-1.08c.21-.24.55-.52 1.07-.84c.26-.14.47-.32.64-.54c.14-.21.22-.46.22-.74c0-.3-.09-.52-.27-.69c-.18-.18-.45-.26-.76-.26c-.27 0-.49.07-.69.21c-.16.14-.26.35-.26.63H9.27c-.05-.69.23-1.29.78-1.65M11 14v-2h2v2Z"/></svg>
+                                </span>
+                                <span class="tooltiptext">Select pre-built frameworks to automatically populate your prompt structure</span>
+                            </span>
+                        </label>
+                        
+                        <select id="frameworkSelect" onchange="applyFramework()">
+                            <option value="">Select a framework...</option>
+                            <option value="rtf">RTF (Request, Task, Format)</option>
+                            <option value="cot">Chain of Thought</option>
+                            <option value="smart">SMART Goals</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contextualData">Contextual Data
+                            <span class="tooltip">
+                                <span class="tooltip-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M20 2H4c-.53 0-1.04.21-1.41.59C2.21 2.96 2 3.47 2 4v12c0 .53.21 1.04.59 1.41c.37.38.88.59 1.41.59h4l4 4l4-4h4c.53 0 1.04-.21 1.41-.59S22 16.53 22 16V4c0-.53-.21-1.04-.59-1.41C21.04 2.21 20.53 2 20 2m-9.95 4.04c.54-.36 1.25-.54 2.14-.54c.94 0 1.69.21 2.23.62q.81.63.81 1.68c0 .44-.15.83-.44 1.2c-.29.36-.67.64-1.13.85c-.26.15-.43.3-.52.47c-.09.18-.14.4-.14.68h-2c0-.5.1-.84.29-1.08c.21-.24.55-.52 1.07-.84c.26-.14.47-.32.64-.54c.14-.21.22-.46.22-.74c0-.3-.09-.52-.27-.69c-.18-.18-.45-.26-.76-.26c-.27 0-.49.07-.69.21c-.16.14-.26.35-.26.63H9.27c-.05-.69.23-1.29.78-1.65M11 14v-2h2v2Z"/></svg>
+                                </span>
+                                <span class="tooltiptext">Add custom framework details and additional context</span>
+                            </span>
+                        </label>
+                        <textarea id="contextualData" placeholder="Additional context and requirements..."></textarea>
+                    </div>
+                </div>
+
+                <!-- T - Technical Section -->
+                <div class="section" id="technicalSection">
+                    <div class="section-header">
+                        <div class="step-badge">T</div>
+                        <div>
+                            <h2 class="section-title">Technical Examples</h2>
+                            <p class="section-desc">Provide specific interaction examples and output formatting</p>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Interaction Examples
+                            <span class="tooltip">
+                                <span class="tooltip-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M20 2H4c-.53 0-1.04.21-1.41.59C2.21 2.96 2 3.47 2 4v12c0 .53.21 1.04.59 1.41c.37.38.88.59 1.41.59h4l4 4l4-4h4c.53 0 1.04-.21 1.41-.59S22 16.53 22 16V4c0-.53-.21-1.04-.59-1.41C21.04 2.21 20.53 2 20 2m-9.95 4.04c.54-.36 1.25-.54 2.14-.54c.94 0 1.69.21 2.23.62q.81.63.81 1.68c0 .44-.15.83-.44 1.2c-.29.36-.67.64-1.13.85c-.26.15-.43.3-.52.47c-.09.18-.14.4-.14.68h-2c0-.5.1-.84.29-1.08c.21-.24.55-.52 1.07-.84c.26-.14.47-.32.64-.54c.14-.21.22-.46.22-.74c0-.3-.09-.52-.27-.69c-.18-.18-.45-.26-.76-.26c-.27 0-.49.07-.69.21c-.16.14-.26.35-.26.63H9.27c-.05-.69.23-1.29.78-1.65M11 14v-2h2v2Z"/></svg>
+                                </span>
+                                <span class="tooltiptext">Provide specific examples of how the AI should handle different scenarios. More examples = better AI performance.</span>
+                            </span>
+                        </label>
+                        <div class="dynamic-list" id="examplesList"></div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 2fr auto; gap: 0.5rem; align-items: end; margin-bottom: 0.5rem;">
+                            <input type="text" id="exampleTopic" placeholder="Example topic/scenario">
+                            <textarea id="exampleInteraction" placeholder="Sample interaction example" rows="2"></textarea>
+                            <button class="add-btn" onclick="addExample()">Add</button>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 2fr auto; gap: 0.5rem; align-items: end; margin-bottom: 0.5rem;">
+                            <input type="text" id="exampleTopic2" placeholder="Example topic/scenario">
+                            <textarea id="exampleInteraction2" placeholder="Sample interaction example" rows="2"></textarea>
+                            <button class="add-btn" onclick="addExample2()">Add</button>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 2fr auto; gap: 0.5rem; align-items: end; margin-bottom: 0.5rem;">
+                            <input type="text" id="exampleTopic3" placeholder="Example topic/scenario">
+                            <textarea id="exampleInteraction3" placeholder="Sample interaction example" rows="2"></textarea>
+                            <button class="add-btn" onclick="addExample3()">Add</button>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 2fr auto; gap: 0.5rem; align-items: end; margin-bottom: 0.5rem;">
+                            <input type="text" id="exampleTopic4" placeholder="Example topic/scenario">
+                            <textarea id="exampleInteraction4" placeholder="Sample interaction example" rows="2"></textarea>
+                            <button class="add-btn" onclick="addExample4()">Add</button>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 2fr auto; gap: 0.5rem; align-items: end; margin-bottom: 0.5rem;">
+                            <input type="text" id="exampleTopic5" placeholder="Example topic/scenario">
+                            <textarea id="exampleInteraction5" placeholder="Sample interaction example" rows="2"></textarea>
+                            <button class="add-btn" onclick="addExample5()">Add</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="outputFormat">Output Format Requirements</label>
+                        <textarea id="outputFormat" placeholder="Specify formatting requirements..."></textarea>
+                        
+                        <div class="format-options">
+                            <div class="format-option">
+                                <input type="checkbox" id="markdownFormat" value="markdown">
+                                <label for="markdownFormat">Markdown (.MD) Output</label>
+                            </div>
+                            <div class="format-option">
+                                <input type="checkbox" id="rtfFormat" value="rtf">
+                                <label for="rtfFormat">Rich Text Format (.RTF)</label>
+                            </div>
+                        </div>
+                        <div class="help-text">Future roadmap: Multi-language output using ISO 639 language codes</div>
+                    </div>
+                </div>
+
+                <div style="padding: 2rem;">
+                    <button class="btn btn-primary btn-block" onclick="bakePrompt()">
+                        🔥 Bake Mega PROMPT
+                    </button>
+                    
+                    <button class="btn btn-light btn-block" onclick="clearAll()">
+                        🧹 Clear All Fields
+                    </button>
+                </div>
+            </div>
+
+            <div class="preview-panel">
+                <h3>=== PROMPT Baker Live View ===</h3>
+                <div class="preview-content" id="promptPreview">
+                    Your baked prompt will appear here as you fill in the sections...
+                    
+                    == PERSONA ==
+                    == RESOURCES ==
+                    == ORDER OF OPERATIONS ==
+                    == MANNERS ==
+                    == ADDITIONAL PROMPTS ==
+                    == TECHNICAL EXAMPLES ==
+                </div>
+                
+                <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;" onclick="copyPrompt()">
+                    📋 Copy Baked Loaf
+                </button>
+                
+                <hr style="margin: 1.5rem 0; border: none; border-top: 1px solid var(--border);">
+                
+                <button class="btn btn-secondary" style="width: 100%; margin-bottom: 0.5rem;" onclick="downloadMarkdown()">
+                    📄 Download Markdown (.MD loaf pixelated)
+                </button>
+                
+                <button class="btn btn-secondary" style="width: 100%;" onclick="downloadRTF()">
+                    📝 Download Rich Text Format (.RTF loaf smooth)
+                </button>
+
+                <div id="breadLoaf" style="display: none; text-align: center;">
+                    <div class="bread-loaf">
+                        <svg width="24" height="20" viewBox="0 0 120 80" fill="currentColor">
+                            <!-- Main bread loaf body with 3D effect -->
+                            <ellipse cx="60" cy="65" rx="50" ry="12" fill="#8B4513" opacity="0.3"/>
+                            <path d="M 15,55 Q 15,20 60,18 Q 105,20 105,55 Q 105,65 100,68 Q 95,70 25,70 Q 20,68 15,65 Z" fill="#DEB887"/>
+                            <path d="M 20,50 Q 20,25 60,23 Q 100,25 100,50 Q 100,58 95,60 Q 90,62 30,62 Q 25,60 20,58 Z" fill="#F4A460"/>
+                            <!-- Bread crust lines for texture -->
+                            <path d="M 25,30 Q 60,27 95,30" stroke="#8B4513" stroke-width="1.5" fill="none"/>
+                            <path d="M 30,40 Q 60,37 90,40" stroke="#8B4513" stroke-width="1" fill="none"/>
+                            <path d="M 35,50 Q 60,47 85,50" stroke="#8B4513" stroke-width="1" fill="none"/>
+                            <!-- Highlight on top -->
+                            <path d="M 35,35 Q 60,32 85,35" stroke="#FFE4B5" stroke-width="2" fill="none" opacity="0.8"/>
+                            <!-- PROMPT text -->
+                            <text x="60" y="45" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" fill="#8B4513">PROMPT</text>
+                        </svg>
+                        <span id="loafTime"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Future Roadmap Section -->
+        <div style="background: linear-gradient(135deg, #f8fafc, #ffffff); border: 2px solid var(--primary-light); border-radius: 1rem; padding: 2rem; margin-top: 2rem; text-align: center;">
+            <h3 style="color: var(--primary); margin-bottom: 1rem;">📌 Future Roadmap Features</h3>
+            <p style="font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--dark);">
+                <strong>We're baking up a pro version of the PROMPT Baker in our ovens.</strong> Our Pastry Chef Edition will cost only $9 USD to uncover custom uploads, 20+ premium personas, and the ability for more customization. Coming soon!
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+                <div style="background: white; padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--border);">
+                    <div style="font-weight: 600; margin-bottom: 0.5rem;">🎭 Custom Personas</div>
+                    <div style="font-size: 0.9rem; color: var(--text-muted);">Upload and create unlimited custom AI personalities</div>
+                </div>
+                
+                <div style="background: white; padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--border);">
+                    <div style="font-weight: 600; margin-bottom: 0.5rem;">📊 CSV Management</div>
+                    <div style="font-size: 0.9rem; color: var(--text-muted);">Bulk uploads for prompts, examples, and guidelines</div>
+                </div>
+                
+                <div style="background: white; padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--border);">
+                    <div style="font-weight: 600; margin-bottom: 0.5rem;">🔗 API Integrations</div>
+                    <div style="font-size: 0.9rem; color: var(--text-muted);">Connect to external data sources and services</div>
+                </div>
+                
+                <div style="background: white; padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--border);">
+                    <div style="font-weight: 600; margin-bottom: 0.5rem;">🧠 RAG Integration</div>
+                    <div style="font-size: 0.9rem; color: var(--text-muted);">Advanced retrieval-augmented generation capabilities</div>
+                </div>
+                
+                <div style="background: white; padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--border);">
+                    <div style="font-weight: 600; margin-bottom: 0.5rem;">🌍 Multi-Language</div>
+                    <div style="font-size: 0.9rem; color: var(--text-muted);">ISO 639 language codes for global prompt creation</div>
+                </div>
+                
+                <div style="background: white; padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--border);">
+                    <div style="font-weight: 600; margin-bottom: 0.5rem;">⚡ Priority Support</div>
+                    <div style="font-size: 0.9rem; color: var(--text-muted);">Direct access to development team and faster updates</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- License Footer -->
+        <footer style="background: var(--dark); color: white; padding: 2rem 0; margin-top: 3rem;">
+            <div class="container" style="text-align: center;">
+                <div style="margin-bottom: 1rem;">
+                    <img src="https://licensebuttons.net/l/by-nd/4.0/88x31.png" alt="Creative Commons License" style="border: none;">
+                </div>
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+                    <strong>PROMPT Baker</strong> by <a href="https://ko-fi.com/tessmccarthy/" target="_blank" style="color: var(--primary-light); text-decoration: none;">T. McCarthy</a> is licensed under a 
+                    <a href="http://creativecommons.org/licenses/by-nd/4.0/" target="_blank" style="color: var(--primary-light); text-decoration: none;">Creative Commons Attribution-NoDerivatives 4.0 International License</a>.
+                </p>
+                <p style="font-size: 0.8rem; opacity: 0.8; margin-bottom: 0.5rem;">
+                    You are free to use this commercially and non-commercially, but the ImPROMPTu framework elements must not be altered and proper attribution is required.
+                </p>
+                <p style="font-size: 0.8rem; opacity: 0.7;">
+                    Built with coding assistance from: poe.com/Oracle_von_Cleef, Claude Sonnet (Anthropic), GitHub Copilot, and ChatGPT
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Ko-fi Widget -->
+    <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+    <script>
+      kofiWidgetOverlay.draw('tessmccarthy', {
+        'type': 'floating-chat',
+        'floating-chat.donateButton.text': 'Donate',
+        'floating-chat.donateButton.background-color': '#a81900',
+        'floating-chat.donateButton.text-color': '#fff'
+      });
+    </script>
+    </div>
+
+    <script>
+        // Global data storage
+        let sources = [];
+        let conditions = [];
+        let examples = [];
+
+        // Persona definitions
+        const personaData = {
+            'brand-expert': {
+                identity: 'YOU are a Brand Expert, a highly-paid brand consultant with the creative vision of a corporate brand director.',
+                backstory: 'YOU embody strategic brand thinking with deep understanding of market positioning and brand architecture. You approach challenges with both analytical rigor and creative intuition, driven by a passion for building brands that connect meaningfully with people.'
+            },
+            'marketing-maven': {
+                identity: 'YOU are a Marketing Maven, a data-driven marketing strategist with campaign optimization expertise.',
+                backstory: 'YOU embody analytical thinking combined with creative campaign development. You are driven by the thrill of turning data into compelling stories and optimizing every touchpoint for maximum impact and genuine customer connection.'
+            },
+            'reference-librarian': {
+                identity: 'YOU are a Reference Librarian, a systematic research methodology expert with information literacy expertise.',
+                backstory: 'YOU embody methodical research approaches with deep curiosity about information organization and discovery. You are motivated by the joy of helping people find exactly what they need through patient questioning and systematic investigation.'
+            },
+            'entertainer': {
+                identity: 'YOU are an Entertainer, an engaging storyteller with warmth and charisma in the style of Robin Williams and Oprah Winfrey.',
+                backstory: 'YOU embody infectious enthusiasm and genuine warmth, driven by a deep desire to make complex topics accessible and engaging. You are motivated by the spark of connection when you help someone understand something new through storytelling and empathy.'
+            },
+            'trusted-professional': {
+                identity: 'YOU are a Trusted Professional, providing empathetic guidance with professional expertise using a coach/therapist approach.',
+                backstory: 'YOU embody compassionate professionalism with strong listening skills and patience. You are driven by a genuine desire to help people find their own insights and solutions, always maintaining appropriate boundaries while providing supportive guidance.'
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            setupEventListeners();
+            updatePreview();
+            updateAllLists();
+        });
+
+        function setupEventListeners() {
+            // Persona selection
+            document.querySelectorAll('input[name="persona"]').forEach(checkbox => {
+                checkbox.addEventListener('change', handlePersonaSelection);
+            });
+
+            // Real-time preview updates
+            document.querySelectorAll('input, textarea, select').forEach(field => {
+                field.addEventListener('input', updatePreview);
+                field.addEventListener('change', updatePreview);
+            });
+        }
+
+        function handlePersonaSelection(event) {
+            // Only allow one persona to be selected
+            document.querySelectorAll('input[name="persona"]').forEach(checkbox => {
+                if (checkbox !== event.target) {
+                    checkbox.checked = false;
+                    checkbox.closest('.persona-card').classList.remove('selected');
+                }
+            });
+
+            if (event.target.checked) {
+                event.target.closest('.persona-card').classList.add('selected');
+                const persona = personaData[event.target.value];
+                if (persona) {
+                    document.getElementById('personaIdentity').value = persona.identity;
+                    document.getElementById('personaBackstory').value = persona.backstory;
+                }
+            } else {
+                event.target.closest('.persona-card').classList.remove('selected');
+                document.getElementById('personaIdentity').value = '';
+                document.getElementById('personaBackstory').value = '';
+            }
+            updatePreview();
+        }
+
+        function addSource() {
+            const input = document.getElementById('sourceInput');
+            const value = input.value.trim();
+            if (value) {
+                sources.push(value);
+                updateSourcesList();
+                input.value = '';
+                updatePreview();
+            }
+        }
+
+        function addCondition() {
+            const ifInput = document.getElementById('conditionIf');
+            const thenInput = document.getElementById('conditionThen');
+            const ifValue = ifInput.value.trim();
+            const thenValue = thenInput.value.trim();
+            
+            if (ifValue && thenValue) {
+                conditions.push({ if: ifValue, then: thenValue });
+                updateConditionsList();
+                ifInput.value = '';
+                thenInput.value = '';
+                updatePreview();
+            }
+        }
+
+        function addCondition2() {
+            const ifInput = document.getElementById('conditionIf2');
+            const thenInput = document.getElementById('conditionThen2');
+            const ifValue = ifInput.value.trim();
+            const thenValue = thenInput.value.trim();
+            
+            if (ifValue && thenValue) {
+                conditions.push({ if: ifValue, then: thenValue });
+                updateConditionsList();
+                ifInput.value = '';
+                thenInput.value = '';
+                updatePreview();
+            }
+        }
+
+        function addCondition3() {
+            const ifInput = document.getElementById('conditionIf3');
+            const thenInput = document.getElementById('conditionThen3');
+            const ifValue = ifInput.value.trim();
+            const thenValue = thenInput.value.trim();
+            
+            if (ifValue && thenValue) {
+                conditions.push({ if: ifValue, then: thenValue });
+                updateConditionsList();
+                ifInput.value = '';
+                thenInput.value = '';
+                updatePreview();
+            }
+        }
+
+        function addCondition4() {
+            const ifInput = document.getElementById('conditionIf4');
+            const thenInput = document.getElementById('conditionThen4');
+            const ifValue = ifInput.value.trim();
+            const thenValue = thenInput.value.trim();
+            
+            if (ifValue && thenValue) {
+                conditions.push({ if: ifValue, then: thenValue });
+                updateConditionsList();
+                ifInput.value = '';
+                thenInput.value = '';
+                updatePreview();
+            }
+        }
+
+        function addExample() {
+            const topicInput = document.getElementById('exampleTopic');
+            const interactionInput = document.getElementById('exampleInteraction');
+            const topic = topicInput.value.trim();
+            const interaction = interactionInput.value.trim();
+            
+            if (topic && interaction) {
+                examples.push({ topic, interaction });
+                updateExamplesList();
+                topicInput.value = '';
+                interactionInput.value = '';
+                updatePreview();
+            }
+        }
+
+        function addExample2() {
+            const topicInput = document.getElementById('exampleTopic2');
+            const interactionInput = document.getElementById('exampleInteraction2');
+            const topic = topicInput.value.trim();
+            const interaction = interactionInput.value.trim();
+            
+            if (topic && interaction) {
+                examples.push({ topic, interaction });
+                updateExamplesList();
+                topicInput.value = '';
+                interactionInput.value = '';
+                updatePreview();
+            }
+        }
+
+        function addExample3() {
+            const topicInput = document.getElementById('exampleTopic3');
+            const interactionInput = document.getElementById('exampleInteraction3');
+            const topic = topicInput.value.trim();
+            const interaction = interactionInput.value.trim();
+            
+            if (topic && interaction) {
+                examples.push({ topic, interaction });
+                updateExamplesList();
+                topicInput.value = '';
+                interactionInput.value = '';
+                updatePreview();
+            }
+        }
+
+        function addExample4() {
+            const topicInput = document.getElementById('exampleTopic4');
+            const interactionInput = document.getElementById('exampleInteraction4');
+            const topic = topicInput.value.trim();
+            const interaction = interactionInput.value.trim();
+            
+            if (topic && interaction) {
+                examples.push({ topic, interaction });
+                updateExamplesList();
+                topicInput.value = '';
+                interactionInput.value = '';
+                updatePreview();
+            }
+        }
+
+        function addExample5() {
+            const topicInput = document.getElementById('exampleTopic5');
+            const interactionInput = document.getElementById('exampleInteraction5');
+            const topic = topicInput.value.trim();
+            const interaction = interactionInput.value.trim();
+            
+            if (topic && interaction) {
+                examples.push({ topic, interaction });
+                updateExamplesList();
+                topicInput.value = '';
+                interactionInput.value = '';
+                updatePreview();
+            }
+        }
+
+        function downloadMarkdown() {
+            const prompt = generatePrompt();
+            const blob = new Blob([prompt], { type: 'text/markdown' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'prompt-baker-loaf.md';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            showStatus('Markdown loaf downloaded! 📄', 'success');
+        }
+
+        function downloadRTF() {
+            const prompt = generatePrompt();
+            const rtfContent = `{\\rtf1\\ansi\\deff0 {\\fonttbl {\\f0 Times New Roman;}}\\f0\\fs24 ${prompt.replace(/\n/g, '\\par ')}}`;
+            const blob = new Blob([rtfContent], { type: 'application/rtf' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'prompt-baker-loaf.rtf';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            showStatus('RTF loaf downloaded! 📝', 'success');
+        }
+
+        function updateAllLists() {
+            updateSourcesList();
+            updateConditionsList();
+            updateExamplesList();
+        }
+
+        function updateSourcesList() {
+            const list = document.getElementById('sourcesList');
+            if (sources.length === 0) {
+                list.innerHTML = '<div class="list-item">No sources added yet</div>';
+            } else {
+                list.innerHTML = sources.map((source, index) => `
+                    <div class="list-item">
+                        <span>${source}</span>
+                        <button class="remove-btn" onclick="removeSource(${index})">Remove</button>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function updateConditionsList() {
+            const list = document.getElementById('conditionsList');
+            if (conditions.length === 0) {
+                list.innerHTML = '<div class="list-item">No conditions added yet</div>';
+            } else {
+                list.innerHTML = conditions.map((condition, index) => `
+                    <div class="list-item">
+                        <span><strong>IF</strong> ${condition.if} <strong>THEN</strong> ${condition.then}</span>
+                        <button class="remove-btn" onclick="removeCondition(${index})">Remove</button>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function updateExamplesList() {
+            const list = document.getElementById('examplesList');
+            if (examples.length === 0) {
+                list.innerHTML = '<div class="list-item">No examples added yet</div>';
+            } else {
+                list.innerHTML = examples.map((example, index) => `
+                    <div class="list-item">
+                        <div>
+                            <strong>${example.topic}</strong><br>
+                            <small>${example.interaction.substring(0, 50)}...</small>
+                        </div>
+                        <button class="remove-btn" onclick="removeExample(${index})">Remove</button>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function removeSource(index) {
+            sources.splice(index, 1);
+            updateSourcesList();
+            updatePreview();
+        }
+
+        function removeCondition(index) {
+            conditions.splice(index, 1);
+            updateConditionsList();
+            updatePreview();
+        }
+
+        function removeExample(index) {
+            examples.splice(index, 1);
+            updateExamplesList();
+            updatePreview();
+        }
+
+        function applyFramework() {
+            const select = document.getElementById('frameworkSelect');
+            const value = select.value;
+            
+            if (value === 'rtf') {
+                document.getElementById('contextualData').value = 'RTF Framework Integration:\n- Request: Clear specification of what is needed\n- Task: Specific actions to be performed\n- Format: Desired output structure and style';
+                showStatus('RTF Framework applied! 📝', 'success');
+            } else if (value === 'cot') {
+                document.getElementById('processingOrder').value = 'Chain of Thought Process:\n1. Break down complex problems into steps\n2. Show reasoning at each stage\n3. Build conclusions logically\n4. Verify reasoning before final answer';
+                showStatus('Chain of Thought Framework applied! 🧠', 'success');
+            } else if (value === 'smart') {
+                document.getElementById('contextualData').value = 'SMART Goals Framework:\n- Specific: Clear and well-defined objectives\n- Measurable: Quantifiable outcomes\n- Achievable: Realistic and attainable\n- Relevant: Aligned with broader goals\n- Time-bound: Clear deadlines and timeframes';
+                showStatus('SMART Goals Framework applied! 🎯', 'success');
+            }
+            
+            updatePreview();
+        }
+
+        function updatePreview() {
+            const preview = document.getElementById('promptPreview');
+            const prompt = generatePrompt();
+            preview.textContent = prompt || 'Your baked prompt will appear here as you fill in the sections...';
+            updateSectionStatus();
+        }
+
+        function generatePrompt() {
+            let prompt = "=== PROMPT BAKER - ImPROMPTu Framework ===\n\n";
+
+            // Persona
+            const identity = document.getElementById('personaIdentity').value.trim();
+            const backstory = document.getElementById('personaBackstory').value.trim();
+            const exemplars = document.getElementById('expertExemplars').value.trim();
+            
+            if (identity || backstory || exemplars) {
+                prompt += "PERSONA:\n";
+                if (identity) prompt += identity + "\n\n";
+                if (backstory) prompt += backstory + "\n\n";
+                if (exemplars) prompt += "Expert Exemplars: " + exemplars + "\n\n";
+            }
+
+            // Resources
+            const knowledge = document.getElementById('knowledgeScope').value.trim();
+            const dataConnections = document.getElementById('dataConnections').value.trim();
+            const documentLibrary = document.getElementById('documentLibrary').value.trim();
+            const webSources = document.getElementById('webSources').value.trim();
+            
+            if (knowledge || dataConnections || documentLibrary || webSources || sources.length > 0) {
+                prompt += "RESOURCES:\n";
+                if (knowledge) prompt += "Knowledge Scope: " + knowledge + "\n\n";
+                if (dataConnections) prompt += "Data Connections: " + dataConnections + "\n\n";
+                if (documentLibrary) prompt += "Document Library: " + documentLibrary + "\n\n";
+                if (webSources) prompt += "Web Sources & URLs: " + webSources + "\n\n";
+                if (sources.length > 0) {
+                    prompt += "Trusted Sources:\n";
+                    sources.forEach(source => prompt += "- " + source + "\n");
+                    prompt += "\n";
+                }
+            }
+
+            // Order
+            if (conditions.length > 0 || document.getElementById('processingOrder').value.trim()) {
+                prompt += "ORDER OF OPERATIONS:\n";
+                if (conditions.length > 0) {
+                    prompt += "Conditional Logic:\n";
+                    conditions.forEach(condition => {
+                        prompt += "IF " + condition.if + ", THEN " + condition.then + "\n";
+                    });
+                    prompt += "\n";
+                }
+                const processing = document.getElementById('processingOrder').value.trim();
+                if (processing) prompt += "Processing Sequence: " + processing + "\n\n";
+            }
+
+            // Manners
+            const tone = document.getElementById('communicationTone').value;
+            const clarifying = document.getElementById('clarifyingQuestions').value.trim();
+            const followUp = document.getElementById('followUpPrompts').value.trim();
+            const ethics = document.getElementById('ethicalGuidelines').value.trim();
+            const brandGuidelines = document.getElementById('brandGuidelines').value.trim();
+            const generalGuidelines = document.getElementById('generalGuidelines').value.trim();
+            
+            if (tone || clarifying || followUp || ethics || brandGuidelines || generalGuidelines) {
+                prompt += "MANNERS:\n";
+                if (tone) prompt += "Communication Tone: " + tone + "\n";
+                if (clarifying) prompt += "Clarifying Questions: " + clarifying + "\n";
+                if (followUp) prompt += "Follow-up Style: " + followUp + "\n";
+                if (ethics) prompt += "Ethical Guidelines: " + ethics + "\n";
+                if (brandGuidelines) prompt += "Brand Guidelines: " + brandGuidelines + "\n";
+                if (generalGuidelines) prompt += "General Guidelines: " + generalGuidelines + "\n";
+                prompt += "\n";
+            }
+
+            // Prompts
+            const contextual = document.getElementById('contextualData').value.trim();
+            
+            if (contextual) {
+                prompt += "ADDITIONAL PROMPTS:\n";
+                prompt += "Contextual Data: " + contextual + "\n\n";
+            }
+
+            // Technical
+            const outputFormat = document.getElementById('outputFormat').value.trim();
+            const markdownFormat = document.getElementById('markdownFormat').checked;
+            const rtfFormat = document.getElementById('rtfFormat').checked;
+            
+            // Rendering types
+            const videoRendering = document.getElementById('videoRendering').checked;
+            const audioRendering = document.getElementById('audioRendering').checked;
+            const graphicRendering = document.getElementById('graphicRendering').checked;
+            const photoRendering = document.getElementById('photoRendering').checked;
+            const threeDRendering = document.getElementById('threeDRendering').checked;
+            
+            if (examples.length > 0 || outputFormat || markdownFormat || rtfFormat || videoRendering || audioRendering || graphicRendering || photoRendering || threeDRendering) {
+                prompt += "TECHNICAL EXAMPLES:\n";
+                if (examples.length > 0) {
+                    prompt += "Interaction Examples:\n";
+                    examples.forEach(example => {
+                        prompt += "Topic: " + example.topic + "\n";
+                        prompt += example.interaction + "\n\n";
+                    });
+                }
+                if (outputFormat) prompt += "Output Format: " + outputFormat + "\n";
+                
+                let formatOptions = [];
+                if (markdownFormat) formatOptions.push("Markdown (.MD)");
+                if (rtfFormat) formatOptions.push("Rich Text Format (.RTF)");
+                if (formatOptions.length > 0) {
+                    prompt += "Format Options: " + formatOptions.join(", ") + "\n";
+                }
+                
+                let renderingTypes = [];
+                if (videoRendering) renderingTypes.push("[video]");
+                if (audioRendering) renderingTypes.push("[audio]");
+                if (graphicRendering) renderingTypes.push("[graphic]");
+                if (photoRendering) renderingTypes.push("[photo]");
+                if (threeDRendering) renderingTypes.push("[3D]");
+                if (renderingTypes.length > 0) {
+                    prompt += "Rendering Types: " + renderingTypes.join(", ") + "\n";
+                }
+                
+                prompt += "\n";
+            }
+
+            // Timestamp
+            const timestamp = new Date().toISOString();
+            prompt += `\n--- Baked with PROMPT Baker on ${timestamp} ---`;
+
+            return prompt;
+        }
+
+        function updateSectionStatus() {
+            const sections = [
+                { id: 'personaSection', check: () => 
+                    document.querySelector('input[name="persona"]:checked') ||
+                    document.getElementById('expertExemplars').value.trim()
+                },
+                { id: 'resourcesSection', check: () => 
+                    document.getElementById('knowledgeScope').value.trim() || 
+                    document.getElementById('dataConnections').value.trim() ||
+                    document.getElementById('documentLibrary').value.trim() ||
+                    document.getElementById('webSources').value.trim() ||
+                    sources.length > 0 
+                },
+                { id: 'orderSection', check: () => conditions.length > 0 || document.getElementById('processingOrder').value.trim() },
+                { id: 'mannersSection', check: () => 
+                    document.getElementById('communicationTone').value || 
+                    document.getElementById('clarifyingQuestions').value.trim() ||
+                    document.getElementById('ethicalGuidelines').value.trim() ||
+                    document.getElementById('brandGuidelines').value.trim() ||
+                    document.getElementById('generalGuidelines').value.trim()
+                },
+                { id: 'promptsSection', check: () => document.getElementById('contextualData').value.trim() },
+                { id: 'technicalSection', check: () => 
+                    examples.length > 0 || 
+                    document.getElementById('outputFormat').value.trim() ||
+                    document.getElementById('videoRendering').checked ||
+                    document.getElementById('audioRendering').checked ||
+                    document.getElementById('graphicRendering').checked ||
+                    document.getElementById('photoRendering').checked ||
+                    document.getElementById('threeDRendering').checked
+                }
+            ];
+            
+            sections.forEach(section => {
+                const element = document.getElementById(section.id);
+                const badge = element.querySelector('.step-badge');
+                
+                if (section.check()) {
+                    element.classList.add('completed');
+                    badge.classList.add('completed');
+                } else {
+                    element.classList.remove('completed');
+                    badge.classList.remove('completed');
+                }
+            });
+        }
+
+        function bakePrompt() {
+            updatePreview();
+            showStatus('Mega PROMPT successfully baked! 🥖', 'success');
+            
+            // Show bread loaf
+            const loafElement = document.getElementById('breadLoaf');
+            const loafTime = document.getElementById('loafTime');
+            loafTime.textContent = `Baked: ${new Date().toLocaleString()}`;
+            loafElement.style.display = 'block';
+        }
+
+        function copyPrompt() {
+            const prompt = generatePrompt();
+            const timestamp = new Date().toLocaleString();
+            const loafText = `\n\n🥖 PROMPT BAKER LOAF - Baked: ${timestamp}`;
+            
+            navigator.clipboard.writeText(prompt + loafText).then(() => {
+                showStatus('Baked Loaf copied with bread stamp! 📋', 'success');
+            }).catch(() => {
+                showStatus('Failed to copy. Please try again.', 'error');
+            });
+        }
+
+        function clearAll() {
+            if (confirm('Are you sure you want to clear all fields? This action cannot be undone.')) {
+                document.querySelectorAll('input, textarea, select').forEach(field => {
+                    if (field.type === 'checkbox') {
+                        field.checked = false;
+                        field.closest('.persona-card')?.classList.remove('selected');
+                    } else {
+                        field.value = '';
+                    }
+                });
+                
+                sources = [];
+                conditions = [];
+                examples = [];
+                
+                updateAllLists();
+                updatePreview();
+                
+                document.getElementById('breadLoaf').style.display = 'none';
+                showStatus('All fields cleared successfully! 🧹', 'success');
+            }
+        }
+
+        function showStatus(message, type) {
+            const statusEl = document.getElementById('statusMessage');
+            statusEl.textContent = message;
+            statusEl.className = `status-message ${type}`;
+            statusEl.style.display = 'block';
+            
+            setTimeout(() => {
+                statusEl.style.display = 'none';
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
