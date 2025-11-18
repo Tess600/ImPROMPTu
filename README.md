@@ -1,24 +1,63 @@
-# The ImPROMPTu AI Prompt Framework 
-ImPROMPTu is an AI Prompt Framework designed for deeper and more satisfying user-based queries built on my experience as a public reference librarian. The reference interview  and the ALA (American Library Association) reference interview guidelines, of Approachability, Interest, Listening/Inquiring, Searching, and Follow-up. 
+# ImPROMPTu™ AI Prompt Framework
 
-Build 1.1 - This Version is expressly built for Bot Creators on Poe.com, however, its application can be used on a server. 
+ImPROMPTu™ is an AI prompt framework for designing deeper, more reliable, and reusable prompt systems. Developed by Tess McCarthy since 2021 and formalized as the six-element **P.R.O.M.P.T.™** model in August 2023, it turns ad-hoc prompting into a structured, repeatable system for real-world workflows.
+
+ImPROMPTu was originally inspired by reference-interview best practices from public librarianship and the ALA guidelines (Approachability, Interest, Listening/Inquiring, Searching, and Follow-up), translated into a format that AI systems can actually use.
+
+> **Build 2.0** – This version is written with Poe bot creators in mind, but the framework is model- and platform-agnostic and can be used on servers, in custom apps, or directly in LLM system prompts.
+
+---
+
+## License
+
+- **Code** in this repository is licensed under **GNU GPL v3**  
+  (see [`LICENSE`](https://github.com/Tess600/ImPROMPTu/blob/main/LICENSE)).
+
+- **Documentation, examples, diagrams, copy, and written explanations** of the ImPROMPTu / P.R.O.M.P.T.™ framework  
+  are licensed under **Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0)**.  
+  © 2021–2025, Tess McCarthy.
+
+Under **CC BY-SA 4.0** you may:
+
+- Use and adapt this framework text (including commercially),
+- As long as you credit **Tess McCarthy** and  
+- Publish any adapted versions of these docs/framework under the **same CC BY-SA 4.0 license**.
+
+---
+
+## Attribution & Use
+
+ImPROMPTu™ and the P.R.O.M.P.T.™ framework were created by **Tess McCarthy, MLIS (`Tess600`)**.
+
+You are welcome to:
+
+- Use this framework in your own personal or commercial work, as long as you credit the ImPROMPTu™ P.R.O.M.P.T.™ framework (Persona, Resources, Order of Operations, Manners, Prompts, Technical) and its creator, **Tess McCarthy**.
+- Use it for AI bots/agents with clients, in workshops, and in internal tools
+- Fork and extend this repository
+
+As long as you:
+
+- Give clear credit, for example:  
+  > “Built using the ImPROMPTu™ P.R.O.M.P.T.™ Framework by [Tess McCarthy](https://github.com/Tess600/ImPROMPTu).”
+- Do **not** claim the ImPROMPTu framework itself as your original invention
+- Mark significant modifications if you publish your own version
+
+---
 
 ## Introduction
-The ImPROMPTu Framework is a comprehensive yet concise framework to enhance text and conversation between users and AI assistants. ImPROMPTu is modeled after the reference interview techniques of my profession as it breaks a dialogue into key components necessary for a successful reference query: 
 
-P = Persona
+The ImPROMPTu Framework is a concise but comprehensive way to structure text and conversations between users and AI assistants. It breaks a dialogue into six core elements that mirror a high-quality reference interview:
 
-R = Resources/Retrieved Documents
+- **P – Persona**  
+- **R – Resources / Retrieved Documents**  
+- **O – Order of Operations**  
+- **M – Manners**  
+- **P – Prompts**  
+- **T – Technical Examples**
 
-O = Order of Operations 
+These elements give human creators a way to **prime AI systems for relevant, safe, and on-brand exchanges** that actually meet user needs instead of producing generic answers.
 
-M = Manners
-
-P = Prompts
-
-T = Technical Examples
-
-The Framework allows the human user to employ each element to prime the AI for relevant & respectful exchanges that meet learning needs. My goal is to pass on best practices that serve all people equally with empathy, care, and nuance.
+---The Framework allows the human user to employ each element to prime the AI for relevant & respectful exchanges that meet learning needs. My goal is to pass on best practices that serve all people equally with empathy, care, and nuance.
 
 Please let me know if any part requires further explanation. I hope ImPROMPTu paves the way for many fruitful collaborations ahead!
 
