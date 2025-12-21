@@ -1,8 +1,8 @@
 # ImPROMPTu™ AI Prompt Framework
 
-ImPROMPTu™ is an AI prompt framework for designing deeper, more reliable, and reusable prompt systems. Developed by Tess McCarthy since 2021 and formalized as the six-element **P.R.O.M.P.T.™** model in August 2023, it turns ad-hoc prompting into a structured, repeatable system for real-world workflows.
+ImPROMPTu™ is an AI prompt framework for designing deeper, more reliable, and reusable prompt systems. Developed by Tess McCarthy, MLIS since 2021 and formalized as the six-element **P.R.O.M.P.T.™** model in August 2023, it turns ad-hoc prompting into a structured, repeatable system for real-world workflows.
 
-ImPROMPTu was originally inspired by reference-interview best practices from public librarianship and the ALA guidelines (Approachability, Interest, Listening/Inquiring, Searching, and Follow-up), translated into a format that AI systems can actually use.
+ImPROMPTu was originally modeled after my industry experience in metadata & taxonomies. Its also inspired by reference interview best practices from public librarianship and the ALA guidelines (Approachability, Interest, Listening/Inquiring, Searching, and Follow-up), translated into a format that AI systems can actually use.
 
 > **Build 2.0** – This version is written with Poe bot creators in mind, but the framework is model- and platform-agnostic and can be used on servers, in custom apps, or directly in LLM system prompts.
 
@@ -24,7 +24,6 @@ Under **CC BY-SA 4.0** you may:
 - Publish any adapted versions of these docs/framework under the **same CC BY-SA 4.0 license**.
 
 ---
-
 ## Attribution & Use
 
 ImPROMPTu™ and the P.R.O.M.P.T.™ framework were created by **Tess McCarthy, MLIS (`Tess600`)**.
@@ -42,11 +41,25 @@ As long as you, your clients both public & private, and any interested parties:
 - Do **not** claim the ImPROMPTu framework itself as your original invention
 - Mark significant modifications if you publish your own version
 
----## Canonical Naming & Use
+## Canonical Naming & Use
 
-- **ImPROMPTu™** = the ecosystem / framework
-- **P–R–O–M–P–T** = named components aligned with controlled vocabularies
-- **Attribution + permission** = required for commercial use
+- **ImPROMPTu™** — the governing framework and ecosystem
+- **P–R–O–M–P–T** — named components aligned with controlled vocabulary practices
+- **Attribution and permission** — required for commercial use
+
+### What “Ecosystem” Means Here
+
+In the context of ImPROMPTu™, **ecosystem** refers to the full, evolving system in which the framework is applied, taught, adapted, and stewarded. This includes:
+
+- the ImPROMPTu™ framework itself
+- the P–R–O–M–P–T named components
+- documentation and examples
+- teaching, facilitation, and 1:1 work (e.g., *We PROMPT Together*)
+- tools or interfaces that implement the framework (e.g., PROMPT Baker / ImPROMPTu forms)
+- ethical norms around attribution, care, and responsible use
+
+The ecosystem is not a single prompt, mega prompt, product, or piece of software.  
+It is the living context in which the framework operates and retains meaning as a controlled vocabulary system—through consistent naming, reuse, and stewardship.
 
 ## Introduction
 
