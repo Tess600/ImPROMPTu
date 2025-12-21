@@ -12,8 +12,7 @@ See [`LICENSE`](https://github.com/Tess600/ImPROMPTu/blob/main/LICENSE).
 
 If any source code or updates are released under different terms, those terms will be stated in the relevant file or directory.
 
----
-
+--
 ### Framework & Documentation
 
 © 2021–2025 Tess McCarthy. **All rights reserved.**
