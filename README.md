@@ -51,6 +51,8 @@ In the context of ImPROMPTu™, **ecosystem** refers to the complete and unified
 context in which the framework is **defined, used, taught, and stewarded by its
 creator**.
 
+The ecosystem is **not** an open system for third-party reinterpretation.
+
 The ecosystem includes:
 
 - the ImPROMPTu™ framework as defined in this repository
@@ -59,8 +61,7 @@ The ecosystem includes:
 - authorized teaching, facilitation, and 1:1 work
 - tools or interfaces created or explicitly approved by the creator
 - shared ethical standards regarding attribution and responsible use.
-.
-The ecosystem is **not** an open system for third-party reinterpretation.
+
 ---
 # Introduction
 
