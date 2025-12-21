@@ -82,7 +82,6 @@ Questions? Please reach out to me. I hope ImPROMPTu paves the way for many fruit
 Best,
 
 T. McCarthy, MLIS
-
 (Librarian and creator of this framework)
 
 ## The ImPROMPTu Framework
