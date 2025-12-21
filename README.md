@@ -1,6 +1,8 @@
 # ImPROMPTu™ AI Prompt Framework
-ImPROMPTu™ is grounded in applied work in metadata design, taxonomy development, and information architecture—disciplines built on repeatable structure and controlled vocabulary. It is also informed by reference interview principles (approachability, inquiry, listening, searching, and follow-up), translated into a format AI systems can reliably interpret and execute.
----
+
+ImPROMPTu™ is a repeatable framework for getting reliable AI outputs.
+Built from metadata, taxonomy, and information architecture, it uses controlled vocabulary and a structured flow—so the model stays in context, executes cleanly, and stops wasting your time.
+
 ## License
 
 ### Code
