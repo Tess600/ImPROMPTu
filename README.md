@@ -6,12 +6,11 @@ Built from metadata, taxonomy, and information architecture, it uses controlled 
 
 ### Code
 
-Any and all **source code** in this repository is licensed under
-**GNU GPL v3**, unless otherwise noted.  
+Any and all **source code** added to this repository is licensed under
+**GNU GPL v3**, unless otherwise stated at the file or directory level.  
 See [`LICENSE`](https://github.com/Tess600/ImPROMPTu/blob/main/LICENSE).
 
-No license is granted for code that does not yet exist.
-
+Updated licensing terms will be explicitly labeled at the file or directory level.
 ---
 
 ### Framework & Documentation
