@@ -10,19 +10,28 @@ ImPROMPTu was & is originally modeled after my industry experience in metadata &
 
 ## License
 
-- **Code** in this repository is licensed under **GNU GPL v3**  
-  (see [`LICENSE`](https://github.com/Tess600/ImPROMPTu/blob/main/LICENSE)).
+### Code
 
-- **Documentation, examples, diagrams, copy, and written explanations** of the ImPROMPTu / P.R.O.M.P.T.™ framework  
-  are licensed under **Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0)**.  
-  © 2021–2025, Tess McCarthy.
+**Code** in this repository is licensed under **GNU GPL v3**  
+(see [`LICENSE`](https://github.com/Tess600/ImPROMPTu/blob/main/LICENSE)).
 
-Under **CC BY-SA 4.0** you may:
+### Framework & Documentation
 
-- Use and adapt this framework text (including commercially),
-- As long as you credit **Tess McCarthy** and  
-- Publish any adapted versions of these docs/framework under the **same CC BY-SA 4.0 license**.
+© 2021–2025 Tess McCarthy. All rights reserved.
 
+The **ImPROMPTu™ framework**, **P–R–O–M–P–T component model**, and all associated
+documentation, examples, diagrams, copy, and written explanations are
+**proprietary works**.
+
+They may be **read and studied for personal, private use only**.
+
+You may **not** copy, modify, translate, adapt, repackage, redistribute,
+or reuse the framework or its documentation—**in whole or in part**—
+without prior written permission from the creator.
+
+Any public, commercial, instructional, or client-facing use requires
+**explicit permission and attribution** as defined in the
+*Attribution & Permission* section.
 ---
 ## Canonical Naming & Use
 
