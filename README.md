@@ -1,7 +1,7 @@
 # ImPROMPTu™ AI Prompt Framework
 
 ImPROMPTu™ and PROMPT™ is a repeatable framework for getting reliable AI outputs.
-Built from metadata, taxonomy, and information architecture, it uses controlled vocabulary and a structured flow so models stay in context, execute predictably, and save time and tokens for both users and machines.
+Built from concepts like metadata, taxonomy, and information architecture, it uses controlled vocabulary and a structured flow so models stay in context, execute predictably, and save time and tokens for both users and machines.
 
 ## License
 ### Code
