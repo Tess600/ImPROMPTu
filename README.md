@@ -35,14 +35,18 @@ You are welcome to:
 - Use it for AI bots/agents with clients, in workshops, and in internal tools
 - Fork and extend this repository
 
-As long as you:
+As long as you, your clients both public & private, and any interested parties:
 
 - Give clear credit, for example:  
   > “Built using the ImPROMPTu™ P.R.O.M.P.T.™ Framework by [Tess McCarthy](https://github.com/Tess600/ImPROMPTu).”
 - Do **not** claim the ImPROMPTu framework itself as your original invention
 - Mark significant modifications if you publish your own version
 
----
+---## Canonical Naming & Use
+
+- **ImPROMPTu™** = the ecosystem / framework
+- **P–R–O–M–P–T** = named components aligned with controlled vocabularies
+- **Attribution + permission** = required for commercial use
 
 ## Introduction
 
