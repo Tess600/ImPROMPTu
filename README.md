@@ -75,13 +75,13 @@ The ImPROMPTu Framework is a concise but comprehensive way to structure text and
 - **T – Technical Examples**
 
 These elements give human creators a way to **prime AI systems for relevant, safe, and on-brand exchanges** that actually meet user needs instead of producing generic answers.
+The Framework allows the human user to employ each element to prime the AI for relevant & respectful exchanges that meet learning needs. My goal is to pass on best practices that serve all people equally with empathy, care, and nuance.
 
----The Framework allows the human user to employ each element to prime the AI for relevant & respectful exchanges that meet learning needs. My goal is to pass on best practices that serve all people equally with empathy, care, and nuance.
+Questions? Please reach out to me. I hope ImPROMPTu paves the way for many fruitful collaborations ahead!
 
-Please reach out to me. I hope ImPROMPTu paves the way for many fruitful collaborations ahead!
-
+Best,
 T. McCarthy, MLIS
-Librarian and creator of ImPROMPTu
+(Librarian and creator of this framework)
 
 ## The ImPROMPTu Framework
 ImPROMPTu contains six elements that bot creators/prompt writers and/or entities can use so that the AI model can grasp the end user's queries. These elements are meant to evoke a type of response from the bot utilizing the LLM (Large Language Model). Some elements can be condensed.  Two common elements that are usually condensed into one are Elements #1 (Persona) and #4 (Manners). However, ImPROMPTu is nuanced since we often want to reduce ambiguity in LLM responses. Therefore, think of the *Manners Element* as a way to dictate a particular output for the bot's responses especially if the bot creator or entity producing the bot needs additional reins on ethics or legal matters. 
