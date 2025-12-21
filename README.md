@@ -24,43 +24,38 @@ Under **CC BY-SA 4.0** you may:
 - Publish any adapted versions of these docs/framework under the **same CC BY-SA 4.0 license**.
 
 ---
-## Attribution & Use
-
-ImPROMPTu™ and the P.R.O.M.P.T.™ framework were created by **Tess McCarthy, MLIS (`Tess600`)**.
-
-You are welcome to:
-
-- Use this framework in your own personal or commercial work, as long as you credit the ImPROMPTu™ P.R.O.M.P.T.™ framework (Persona, Resources, Order of Operations, Manners, Prompts, Technical) and its creator, **Tess McCarthy**.
-- Use it for AI bots/agents with clients, in workshops, and in internal tools
-- Fork and extend this repository
-
-As long as you, your clients both public & private, and any interested parties:
-
-- Give clear credit, for example:  
-  > “Built using the ImPROMPTu™ P.R.O.M.P.T.™ Framework by [Tess McCarthy](https://github.com/Tess600/ImPROMPTu).”
-- Do **not** claim the ImPROMPTu framework itself as your original invention
-- Mark significant modifications if you publish your own version
-
 ## Canonical Naming & Use
 
-- **ImPROMPTu™** — the governing framework and ecosystem
-- **P–R–O–M–P–T** — named components aligned with controlled vocabulary practices
-- **Attribution and permission** — required for commercial use
+- **ImPROMPTu™** — the governing framework and its associated ecosystem  
+- **P–R–O–M–P–T** — the named components of the framework, aligned with controlled vocabulary practices  
+- **Attribution and permission** — required for any commercial or instructional use  
 
 ### What “Ecosystem” Means Here
 
-In the context of ImPROMPTu™, **ecosystem** refers to the full, evolving system in which the framework is applied, taught, adapted, and stewarded. This includes:
+In the context of ImPROMPTu™, **ecosystem** refers to the complete, unified context in which the framework is **used, taught, and stewarded by its creator**.
 
-- the ImPROMPTu™ framework itself
-- the P–R–O–M–P–T named components
-- documentation and examples
-- teaching, facilitation, and 1:1 work (e.g., *We PROMPT Together*)
-- tools or interfaces that implement the framework (e.g., PROMPT Baker / ImPROMPTu forms)
-- ethical norms around attribution, care, and responsible use
+This ecosystem includes:
 
-The ecosystem is not a single prompt, mega prompt, product, or piece of software.  
-It is the living context in which the framework operates and retains meaning as a controlled vocabulary system—through consistent naming, reuse, and stewardship.
+- the ImPROMPTu™ framework as defined in this repository  
+- the P–R–O–M–P–T component model and naming structure  
+- official documentation, examples, and explanatory materials  
+- authorized teaching, facilitation, and 1:1 work (e.g., *We PROMPT Together*)  
+- tools or interfaces created or approved by the framework’s creator (e.g., PROMPT Baker / ImPROMPTu forms)  
+- shared ethical standards regarding attribution, care, and responsible use  
 
+The ImPROMPTu™ ecosystem **does not grant permission** to copy, modify, translate, repackage, adapt, or redistribute the framework or its documentation.
+
+The ecosystem is **not**:
+- a single prompt or “mega prompt”  
+- a template library  
+- a standalone product or software package  
+- an open system for third-party reinterpretation  
+
+Instead, it is the **controlled vocabulary** which provides the controlled context in which the framework retains its meaning, integrity, and function through consistent naming, governed use, and active stewardship by its creator.
+
+
+
+---
 ## Introduction
 
 The ImPROMPTu Framework is a concise but comprehensive way to structure text and conversations between users and AI assistants. It breaks a dialogue into six core elements that mirror a high-quality reference interview:
