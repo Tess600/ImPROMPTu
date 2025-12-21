@@ -58,7 +58,8 @@ The ecosystem includes:
 - official documentation and explanatory materials
 - authorized teaching, facilitation, and 1:1 work
 - tools or interfaces created or explicitly approved by the creator
-- shared ethical standards regarding attribution and responsible use
+- shared ethical standards regarding attribution and responsible use.
+.
 The ecosystem is **not** an open system for third-party reinterpretation.
 ---
 # Introduction
