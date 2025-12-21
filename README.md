@@ -45,7 +45,7 @@ No rights are granted by implication, silence, or prior exposure.
   controlled vocabulary practices  
 - **Attribution and permission** — required for any commercial or instructional use  
 
-### What “Ecosystem” Means Here
+### Definitions
 
 In the context of ImPROMPTu™, **ecosystem** refers to the complete and unified
 context in which the framework is **defined, used, taught, and stewarded by its
