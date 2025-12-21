@@ -1,6 +1,6 @@
 # ImPROMPTu™ AI Prompt Framework
 
-ImPROMPTu™ is a repeatable framework for getting reliable AI outputs.
+ImPROMPTu™ and PROMPT™ is a repeatable framework for getting reliable AI outputs.
 Built from metadata, taxonomy, and information architecture, it uses controlled vocabulary and a structured flow so models stay in context, execute predictably, and save time and tokens for both users and machines.
 
 ## License
@@ -59,7 +59,6 @@ The ecosystem includes:
 - authorized teaching, facilitation, and 1:1 work
 - tools or interfaces created or explicitly approved by the creator
 - shared ethical standards regarding attribution and responsible use
-
 The ecosystem is **not** an open system for third-party reinterpretation.
 ---
 # Introduction
@@ -77,7 +76,7 @@ These elements give human creators a way to **prime AI systems for relevant, saf
 
 ---The Framework allows the human user to employ each element to prime the AI for relevant & respectful exchanges that meet learning needs. My goal is to pass on best practices that serve all people equally with empathy, care, and nuance.
 
-Please let me know if any part requires further explanation. I hope ImPROMPTu paves the way for many fruitful collaborations ahead!
+Please reach out to me. I hope ImPROMPTu paves the way for many fruitful collaborations ahead!
 
 T. McCarthy, MLIS
 Librarian and creator of ImPROMPTu
