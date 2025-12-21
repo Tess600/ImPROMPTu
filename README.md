@@ -75,13 +75,14 @@ The ImPROMPTu Framework is a concise but comprehensive way to structure text and
 - **T – Technical Examples**
 
 These elements give human creators a way to **prime AI systems for relevant, safe, and on-brand exchanges** that actually meet user needs instead of producing generic answers.
-The Framework allows the human user to employ each element to prime the AI for relevant & respectful exchanges that meet learning needs. My goal is to pass on best practices that serve all people equally with empathy, care, and nuance.
+The Framework allows the human user to employ each element to customize LLMs/AI for relevant exchanges that meet the user's needs. My goal is to pass on best practices that serve all.
 
 Questions? Please reach out to me. I hope ImPROMPTu paves the way for many fruitful collaborations ahead!
 
 Best,
 
 T. McCarthy, MLIS
+
 (Librarian and creator of this framework)
 
 ## The ImPROMPTu Framework
