@@ -4,6 +4,8 @@ ImPROMPTu™ is a repeatable framework for getting reliable AI outputs.
 Built from metadata, taxonomy, and information architecture, it uses controlled vocabulary and a structured flow so models stay in context, execute predictably, and save time and tokens for both users and machines.
 ## License
 
+Let’s fix the MD file 
+
 ### Code
 
 Any and all **source code** added to this repository is licensed under
