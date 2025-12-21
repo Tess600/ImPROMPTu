@@ -14,8 +14,6 @@ If any source code or updates are released under different terms, those terms wi
 
 ### Framework & Documentation
 
-© 2021–2025 Tess McCarthy. **All rights reserved.**
-
 The **ImPROMPTu™ framework**, including the **P–R–O–M–P–T element model**, and any
 and all associated materials—documentation, examples, diagrams, schemas, copy,
 and written explanations—are **proprietary intellectual property**.
@@ -27,6 +25,7 @@ adapt, repackage, or create derivative works from the framework or its
 documentation—**in whole or in part**—without **prior written permission**.
 
 ## Permissions & Attribution
+© 2021–2025 Tess McCarthy. **All rights reserved.**
 
 Any public, commercial, instructional, or client-facing use of the
 ImPROMPTu™ framework or the **P–R–O–M–P–T element model** requires
