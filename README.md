@@ -1,7 +1,6 @@
 # ImPROMPTu™ AI Prompt Framework
-
-ImPROMPTu™ and PROMPT™ is a repeatable framework for getting reliable AI outputs.
-Built from concepts like metadata, taxonomy, and information architecture, it uses controlled vocabulary and a structured flow so models stay in context, execute predictably, and save time and tokens for both users and machines.
+ImPROMPTu™ and PROMPT™ use a controlled vocabulary and structured flow so models stay in context, reduce semantic drift, deliver consistent results, and execute predictably—to save time and tokens for both users and machines.
+.
 
 ## License
 ### Code
@@ -17,6 +16,8 @@ If any source code or updates are released under different terms, those terms wi
 The **ImPROMPTu™ framework**, including the **P–R–O–M–P–T element model**, and any
 and all associated materials—documentation, examples, diagrams, schemas, copy,
 and written explanations—are **proprietary intellectual property**.
+
+ImPROMPTu™ separates **structure (P–R–O–M–P–T™)** from **process**, allowing continuity workflows (such as RAUEE) to operate without redefining context.
 
 These materials may be **read and studied for personal, private use only**.
 
