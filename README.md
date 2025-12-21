@@ -1,71 +1,70 @@
 # ImPROMPTu™ AI Prompt Framework
-
-ImPROMPTu™ is an AI prompt framework for designing deeper, more reliable, and reusable prompt systems. Developed by Tess McCarthy, MLIS since 2021 and formalized as the six-element **P.R.O.M.P.T.™** model in August 2023, it turns ad-hoc prompting into a structured, repeatable system for real-world workflows.
-
-ImPROMPTu was & is originally modeled after my industry experience in metadata & taxonomies. It is also inspired by reference interview best practices from public librarianship and the ALA guidelines (Approachability, Interest, Listening/Inquiring, Searching, and Follow-up), translated into a format that AI systems can actually use.
-
-> **Build 2.0** – This version is written with Poe bot creators in mind, but the framework is model- and platform-agnostic and can be used on servers, in custom apps, or directly in LLM system prompts.
-
+ImPROMPTu™ is grounded in applied work in metadata design, taxonomy development, and information architecture—disciplines built on repeatable structure and controlled vocabulary. It is also informed by reference interview principles (approachability, inquiry, listening, searching, and follow-up), translated into a format AI systems can reliably interpret and execute.
 ---
-
 ## License
 
 ### Code
 
-**Code** in this repository is licensed under **GNU GPL v3**  
-(see [`LICENSE`](https://github.com/Tess600/ImPROMPTu/blob/main/LICENSE)).
+Any and all **source code** in this repository is licensed under
+**GNU GPL v3**, unless otherwise noted.  
+See [`LICENSE`](https://github.com/Tess600/ImPROMPTu/blob/main/LICENSE).
+
+No license is granted for code that does not yet exist.
+
+---
 
 ### Framework & Documentation
 
-© 2021–2025 Tess McCarthy. All rights reserved.
+© 2021–2025 Tess McCarthy. **All rights reserved.**
 
-The **ImPROMPTu™ framework**, **P–R–O–M–P–T component model**, and all associated
-documentation, examples, diagrams, copy, and written explanations are
-**proprietary works**.
+The **ImPROMPTu™ framework**, including the **P–R–O–M–P–T element model**, and any
+and all associated materials—documentation, examples, diagrams, schemas, copy,
+and written explanations—are **proprietary intellectual property**.
 
-They may be **read and studied for personal, private use only**.
+These materials may be **read and studied for personal, private use only**.
 
-You may **not** copy, modify, translate, adapt, repackage, redistribute,
-or reuse the framework or its documentation—**in whole or in part**—
-without prior written permission from the creator.
+You may **not** copy, reproduce, distribute, publish, translate, modify,
+adapt, repackage, or create derivative works from the framework or its
+documentation—**in whole or in part**—without **prior written permission**.
 
-Any public, commercial, instructional, or client-facing use requires
-**explicit permission and attribution** as defined in the
-*Attribution & Permission* section.
----
+## Permissions & Attribution
+
+Any public, commercial, instructional, or client-facing use of the
+ImPROMPTu™ framework or the **P–R–O–M–P–T element model** requires
+**prior written permission** and **clear attribution**.
+
+Permission is granted on a case-by-case basis.
+No rights are granted by implication, silence, or prior exposure.
+
+### Required Attribution (when permission is granted)
+
+> “Built using the ImPROMPTu™ / P–R–O–M–P–T Framework by Tess McCarthy.”
+
 ## Canonical Naming & Use
 
 - **ImPROMPTu™** — the governing framework and its associated ecosystem  
-- **P–R–O–M–P–T** — the named components of the framework, aligned with controlled vocabulary practices  
+- **P–R–O–M–P–T** — the named component elements of the framework, aligned with
+  controlled vocabulary practices  
 - **Attribution and permission** — required for any commercial or instructional use  
 
 ### What “Ecosystem” Means Here
 
-In the context of ImPROMPTu™, **ecosystem** refers to the complete, unified context in which the framework is **used, taught, and stewarded by its creator**.
+In the context of ImPROMPTu™, **ecosystem** refers to the complete and unified
+context in which the framework is **defined, used, taught, and stewarded by its
+creator**.
 
-This ecosystem includes:
+The ecosystem includes:
 
-- the ImPROMPTu™ framework as defined in this repository  
-- the P–R–O–M–P–T component model and naming structure  
-- official documentation, examples, and explanatory materials  
-- authorized teaching, facilitation, and 1:1 work (e.g., *We PROMPT Together*)  
-- tools or interfaces created or approved by the framework’s creator (e.g., PROMPT Baker / ImPROMPTu forms)  
-- shared ethical standards regarding attribution, care, and responsible use  
+- the ImPROMPTu™ framework as defined in this repository
+- the P–R–O–M–P–T element model and naming structure
+- official documentation and explanatory materials
+- authorized teaching, facilitation, and 1:1 work
+- tools or interfaces created or explicitly approved by the creator
+- shared ethical standards regarding attribution and responsible use
 
-The ImPROMPTu™ ecosystem **does not grant permission** to copy, modify, translate, repackage, adapt, or redistribute the framework or its documentation.
-
-The ecosystem is **not**:
-- a single prompt or “mega prompt”  
-- a template library  
-- a standalone product or software package  
-- an open system for third-party reinterpretation  
-
-Instead, it is the **controlled vocabulary** which provides the controlled context in which the framework retains its meaning, integrity, and function through consistent naming, governed use, and active stewardship by its creator.
-
-
-
+The ecosystem is **not** an open system for third-party reinterpretation.
 ---
-## Introduction
+# Introduction
 
 The ImPROMPTu Framework is a concise but comprehensive way to structure text and conversations between users and AI assistants. It breaks a dialogue into six core elements that mirror a high-quality reference interview:
 
@@ -85,10 +84,10 @@ Please let me know if any part requires further explanation. I hope ImPROMPTu pa
 T. McCarthy, MLIS
 Librarian and creator of ImPROMPTu
 
-### The ImPROMPTu Framework
+## The ImPROMPTu Framework
 ImPROMPTu contains six elements that bot creators/prompt writers and/or entities can use so that the AI model can grasp the end user's queries. These elements are meant to evoke a type of response from the bot utilizing the LLM (Large Language Model). Some elements can be condensed.  Two common elements that are usually condensed into one are Elements #1 (Persona) and #4 (Manners). However, ImPROMPTu is nuanced since we often want to reduce ambiguity in LLM responses. Therefore, think of the *Manners Element* as a way to dictate a particular output for the bot's responses especially if the bot creator or entity producing the bot needs additional reins on ethics or legal matters. 
 
-### The Elements of ImPROMPTu
+### The Elements of ImPROMPTu is P.R.O.M.P.T 
 1 - P: Persona Element - Bot Persona
 
 2 - R: Resources Element - Resources/Retrieved Documents
