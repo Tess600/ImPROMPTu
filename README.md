@@ -45,7 +45,7 @@ No rights are granted by implication, silence, or prior exposure.
   controlled vocabulary practices  
 - **Attribution and permission** — required for any commercial or instructional use  
 
-### Definitions
+### Additional Definitions
 
 In the context of ImPROMPTu™, **ecosystem** refers to the complete and unified
 context in which the framework is **defined, used, taught, and stewarded by its
@@ -80,7 +80,9 @@ The Framework allows the human user to employ each element to prime the AI for r
 Questions? Please reach out to me. I hope ImPROMPTu paves the way for many fruitful collaborations ahead!
 
 Best,
+
 T. McCarthy, MLIS
+
 (Librarian and creator of this framework)
 
 ## The ImPROMPTu Framework
