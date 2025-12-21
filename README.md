@@ -1,6 +1,5 @@
 # ImPROMPTu™ AI Prompt Framework
 ImPROMPTu™ and PROMPT™ use a controlled vocabulary and structured flow so models stay in context, reduce semantic drift, deliver consistent results, and execute predictably—to save time and tokens for both users and machines.
-.
 
 ## License
 ### Code
