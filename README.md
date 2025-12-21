@@ -65,7 +65,7 @@ The ecosystem includes:
 ---
 # Introduction
 
-The ImPROMPTu Framework is a concise, comprehensive way to structure intelligence, text and conversations across AI systems—from LLMs to assistants and agents. It breaks context into six core elements, bringing the logic of a high-quality reference interview so systems can interpret intent, retrieve what matters, and respond reliably.
+The ImPROMPTu Framework is a concise, comprehensive way to structure intelligence, text and conversations across AI systems—from LLMs to assistants, and agents. It breaks context into six core elements, bringing the logic of a high-quality reference interview so systems can interpret intent, retrieve what matters, and respond reliably.
 
 - **P – Persona**  
 - **R – Resources / Retrieved Documents**  
