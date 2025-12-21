@@ -2,7 +2,7 @@
 
 ImPROMPTu™ is an AI prompt framework for designing deeper, more reliable, and reusable prompt systems. Developed by Tess McCarthy, MLIS since 2021 and formalized as the six-element **P.R.O.M.P.T.™** model in August 2023, it turns ad-hoc prompting into a structured, repeatable system for real-world workflows.
 
-ImPROMPTu was originally modeled after my industry experience in metadata & taxonomies. It is also inspired by reference interview best practices from public librarianship and the ALA guidelines (Approachability, Interest, Listening/Inquiring, Searching, and Follow-up), translated into a format that AI systems can actually use.
+ImPROMPTu was & is originally modeled after my industry experience in metadata & taxonomies. It is also inspired by reference interview best practices from public librarianship and the ALA guidelines (Approachability, Interest, Listening/Inquiring, Searching, and Follow-up), translated into a format that AI systems can actually use.
 
 > **Build 2.0** – This version is written with Poe bot creators in mind, but the framework is model- and platform-agnostic and can be used on servers, in custom apps, or directly in LLM system prompts.
 
