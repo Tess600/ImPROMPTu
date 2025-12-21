@@ -2,17 +2,16 @@
 
 ImPROMPTu™ is a repeatable framework for getting reliable AI outputs.
 Built from metadata, taxonomy, and information architecture, it uses controlled vocabulary and a structured flow so models stay in context, execute predictably, and save time and tokens for both users and machines.
+
 ## License
-
-Let’s fix the MD file 
-
 ### Code
-
-Any and all **source code** added to this repository is licensed under
-**GNU GPL v3**, unless otherwise stated at the file or directory level.  
+Any and all **source code** added to this repository is licensed under **GNU GPL v3**, unless otherwise stated in the relevant file or directory.  
 See [`LICENSE`](https://github.com/Tess600/ImPROMPTu/blob/main/LICENSE).
 
-Updated licensing terms will be explicitly labeled at the file or directory level.
+#### Updates
+
+If any source code or updates are released under different terms, those terms will be stated in the relevant file or directory.
+
 ---
 
 ### Framework & Documentation
