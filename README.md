@@ -97,7 +97,7 @@ The ecosystem includes:
 ---
 # Introduction
 
-The ImPROMPTu Framework is a concise, comprehensive way to scaffold AI interactions—structuring intelligence, text, and conversations across systems, from LLMs to assistants and agents. It breaks context into six core elements, bringing the logic of a high-quality reference interview so systems can interpret intent, retrieve what matters, and respond reliably.
+The ImPROMPTu Framework is a concise, comprehensive way to scaffold AI interactions—structuring intelligence, text, and conversations across systems, from LLMs to assistants and agents. It breaks context into six core elements, bringing the logic of a high‑quality reference interview so systems can interpret intent, retrieve what matters, and respond reliably.
 
 - **P – Persona**  
 - **R – Resources / Retrieved Documents**  
@@ -106,32 +106,41 @@ The ImPROMPTu Framework is a concise, comprehensive way to scaffold AI interacti
 - **P – Prompts**  
 - **T – Technical Examples**
 
-These elements give human creators a way to **prime AI systems for relevant, safe, and on-brand exchanges** that actually meet user needs instead of producing generic answers.
-The Framework allows the human user to employ each element to customize LLMs/AI for relevant exchanges that meet the user's needs. My goal is to pass on best practices that serve all.
+These elements give human creators a way to prime AI systems for relevant, safe, and on‑brand exchanges that meet user needs instead of producing generic answers. The framework allows the human user to employ each element to customize LLMs and AI systems for meaningful, context‑aware interactions. The goal is to pass on best practices that serve all the way Schema.org did for the Internet and Dublin Core did for standardizing all media metadata. 
 
-Questions? Please reach out to me. I hope ImPROMPTu paves the way for many fruitful collaborations ahead!
+Questions? Please reach out to me. ImPROMPTu/PROMPT is offered in the spirit of collaboration and shared advancement.
 
 Best,
 
 T. McCarthy, MLIS
+Copyright © T. McCarthy / Teresita McCarthy / Tess McCarthy, 2021-2026
 
-(Librarian and creator of this framework)
-
-## The ImPROMPTu Framework
-ImPROMPTu contains six elements that bot creators/prompt writers and/or entities can use so that the AI model can grasp the end user's queries. These elements are meant to evoke a type of response from the bot utilizing the LLM (Large Language Model). Some elements can be condensed.  Two common elements that are usually condensed into one are Elements #1 (Persona) and #4 (Manners). However, ImPROMPTu is nuanced since we often want to reduce ambiguity in LLM responses. Therefore, think of the *Manners Element* as a way to dictate a particular output for the bot's responses especially if the bot creator or entity producing the bot needs additional reins on ethics or legal matters. 
+## The ImPROMPTu™ Framework
+ImPROMPTu™ is a structured interaction framework built around six distinct elements (P.R.O.M.P.T) that guide how an AI system interprets, reasons, and responds. Each element shapes a different layer of context, allowing creators to control tone, ethics, workflow, and output quality with precision.
 
 ### The Elements of ImPROMPTu is P.R.O.M.P.T 
-1 - P: Persona Element - Bot Persona
+1 - P: Persona Element - Persona
+Defines the identity, role, expertise, and perspective the AI adopts.
+This anchors the system’s voice, domain knowledge, and point of view.
 
 2 - R: Resources Element - Resources/Retrieved Documents
+Specifies the documents, data, or contextual materials the AI must rely on.
+This constrains hallucination and ensures grounded, source‑aware responses.
 
 3 - O: Order Element - Order of Operations
+Outlines the reasoning steps or workflow the AI must follow.
+This enforces process discipline, consistency, and predictable execution.
 
 4 - M: Manners Element - Manner of Response
+Dictates behavior, safety posture, legal boundaries, and response obligations. This element governs how the AI must act—its tone, constraints, and guardrails—distinct from who the AI is. It gives creators precise control over ethics, compliance requirements, and brand‑aligned communication.
 
 5 - P: Prompt Element - Additional Prompts
+Adds additional instructions, clarifications, or user‑specific needs.
+This is the flexible layer where creators can tune behavior for a given task without reprompting or maintaining prompt libraries.
 
-6 - T: Technical Element - Technical Examples
+6 - T: Technical Element - Technical Examples - Output
+Provides examples, templates, formats, or structured outputs the AI should emulate.
+This ensures the model produces responses in the correct shape, syntax, or pattern.
 
 ### The Elements Explained 
 #### 1. P = PERSONA 
@@ -258,3 +267,5 @@ User: "What's the difference?"
 User: "Chaldean, please. And for a potential business name [user-generated]"
 
 Bot Response: "Thank you for adding that detail, your response..." 
+--
+Copyright © T. McCarthy / Teresita McCarthy / Tess McCarthy / V.velox Ltd.
