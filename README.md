@@ -18,6 +18,8 @@ These groups can use PROMPT freely under CC BY‑NC 4.0 (with attribution):
 - standards bodies and public governance groups
 
 ### COMMERCIAL USE - Commercial use is not permitted under this license  
+[![Commercial License Required](https://img.shields.io/badge/Commercial%20Use-License%20Required-blue)](COMMERCIAL_LICENSE.md)
+
 Organizations wishing to use PROMPT in commercial products, platforms, or agentic systems must obtain a **commercial license** from Tess McCarthy.
 This license allows others to use, adapt, and extend the PROMPT schema with attribution to Tess McCarthy, the creator and steward of the ImPROMPTu™ system.
 
