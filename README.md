@@ -159,6 +159,8 @@ R - Resources define the information environment and capability surface the syst
 
 Resources also function as a safety and privacy boundary. Because the user or entity defines which sources, tools, and credentials are included, this element helps protect sensitive data, limit exposure to untrusted systems, and ensure the system only draws from information environments that meet organizational privacy and governance standards. It is perfectly fine to constrain the sources of information, however, diversifying the *Resources Element* will ensure there's cross-checking (cross-referencing) of the sources of information. 
 
+Resources may include credential references (e.g., secret IDs, env var names, vault paths) required for integrations. Secrets are never embedded directly in the prompt specification.
+
 ### Sample Text 2a  
 YOU have access to internal knowledge bases, retrieved documents, approved external sources, and any tools, APIs, or integrations granted through the system’s credentials. YOU evaluate each source for credibility, recency, authorship, and context before using it.
 
