@@ -2,9 +2,9 @@
 
 **A structured interaction schema for AI agents, chat systems, LLMs, and agentic workflows.**
 
-Formerly ImPROMPTu™. PROMPT™ uses a controlled vocabulary to keep AI models in context, reduce semantic drift, and produce predictable outputs — saving time and tokens for both humans and machines. The goal is to do for AI interaction what Schema.org did for the web and Dublin Core did for media metadata: establish shared, structured standards that serve everyone.
+PROMPT™ uses a controlled vocabulary to keep AI models in context, reduce semantic drift, and produce predictable outputs — saving time and tokens for both humans and machines. The goal is to do for AI interaction what Schema.org did for the web and Dublin Core did for media metadata: establish shared, structured standards that serve everyone.
 
-Companion framework: [RAAUE](https://github.com/Tess600/RAAUE) — the context continuity and human-in-the-loop protocol.
+Framework and repo formerly named ImPROMPTu™. Companion framework: [RAAUE](https://github.com/Tess600/RAAUE) — the context continuity and human-in-the-loop protocol.
 
 ---
 
