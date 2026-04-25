@@ -1,5 +1,5 @@
-![Maintained Since 2023](https://img.shields.io/badge/Maintained_Since-2023-blue)  
-*"Over two years of open-source semantic wrangling (and counting)."*
+![Maintained by Tess McCarthy Since 2023](https://img.shields.io/badge/Maintained_Since-2023-blue)  
+*"Over two years of ongoing governance, framework schema testing, semantic wrangling (and counting)."*
 
 # PROMPT™ Framework
 
